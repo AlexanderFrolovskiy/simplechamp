@@ -1,0 +1,434 @@
+@media (max-width: 1560px) {
+  :root {
+    --font-main: 20px;
+    --font-secondary: 16px;
+    --font-title-section: 32px;
+    --font-number: 78px;
+  }
+
+  /* HERO-1560 */
+  .swiper-hero__training {
+    background-image: url('../img/hero/hockey-1440.png'); 
+  }
+
+  .swiper-hero__event {
+    background-image: url('../img/hero/swimming-1440.png');
+  }
+
+  .swiper-hero__camping {
+    background-image: url('../img/hero/football-1440.png');
+  }
+
+  .swiper-hero__content {
+    max-width: 60%;
+  }
+
+  .swiper-pagination-bullet-hero {
+    margin-right: 24px;
+    width: 60px;
+    height: 8px;
+  }
+}
+
+@media (max-width: 1440px) {
+   /* HERO-1440 */
+   .swiper-hero__content {
+    max-width: 50%;
+  }
+}
+
+@media (max-width: 1200px) {
+  :root {
+    --font-number: 60px;
+  }
+
+  /* HEADER-1200 */
+  .header__nav {
+    display: none;
+  }
+
+  .header__burger {
+    display: block;
+  }
+
+  /* HERO-1200 */
+  .hero {
+    display: none;
+  }
+
+  .swiper-hero {
+    padding-bottom: 40px;
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal-hero {
+    bottom: 0;
+  }
+  
+  .swiper-pagination-bullet-hero {
+    margin-right: 32px;
+    width: 20px;
+    height: 20px;
+    border-radius: 100px;  
+  }
+
+  /* ABOUT-1200 */
+  .about {
+    margin-bottom: 80px;
+  }
+
+  .training__item {
+    height: 300px;
+  }
+
+  /* TRAINING-1200 */
+  .training {
+    margin-bottom: 80px;
+  }
+
+  /* CAMPS-1200 */
+  .camps {
+    margin-bottom: 80px;
+  }
+
+  .camps__container {
+    background-size: 50%;
+  }
+
+  /* EVENTS-1200 */
+  .events {
+    margin-bottom: 80px;
+  }
+
+  /* REVIEWS-1200 */
+  .swiper-button-next--reviews {
+    display: none;
+  }
+
+  .swiper-button-prev--reviews {
+    display: none;
+  }
+
+  .swiper-pagination--reviews {
+    display: block;
+  }
+
+  .slide-info {
+    padding: 0;
+    flex-direction: column-reverse;
+  }
+
+  .slide-info__content {
+    margin-bottom: 20px;
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .slide-info__name {
+    margin-left: 20px;
+  }
+
+  .slide-info__text {
+    margin: 0 0 32px;
+  }
+
+  .swiper-pagination-bullets.swiper-pagination-horizontal-reviews {
+    bottom: 0px;
+  }
+
+  .slide-info__logo {
+    margin: 0;
+    width: 100px;
+    height: 100px;
+  }
+
+  /* APPLICATION-1200 */
+  .application__request {
+    max-width: 75%;
+  }
+
+}
+
+@media (max-width: 992px) {
+  /* HERO-992 */
+  .hero {
+    margin-bottom: 60px;
+  }
+
+  /* ABOUT-992 */
+  .about__content {
+    flex-direction: column;
+  }
+
+  .about__content {
+    margin-bottom: 68px;
+  }
+
+  .about__descr {
+    margin-right: 0;
+    margin-bottom: 32px;
+    max-width: 75%;
+  }
+
+  .about__work-img {
+    margin-right: 32px;
+  }
+
+  .about__work-link {
+    max-width: 468px;
+  }
+
+  .statistic {
+    margin-left: 0;
+  }
+
+  .statistic__items {
+    width: auto;
+    max-width: 30%;
+  }
+
+  .statistic__items:last-child {
+    display: none;
+  }
+
+  /* TRAINING-992 */
+  .training__item {
+    height: 300px;
+  }
+
+  .training__item-text {
+    padding-top: 24px;
+    padding-bottom: 30px;
+  }
+
+  /* CAMP-992 */
+  .camps__container {
+    background-image: none;
+  }
+
+  .camps__list {
+    max-width: 100%;
+  }
+
+  /* EVENT-992 */
+  .events__content {
+    margin: 0 0 40px;
+    flex-direction: column-reverse;
+  }
+
+  .swiper-video {
+    margin-left: 0;
+    max-width: 640px;
+    width: 100%;
+  }
+
+  .events__text {
+    margin-bottom: 40px;
+    max-width: 75%;
+  }
+
+  /* REVIEWS-992 */
+  
+
+  /* APPLICATION-992 */
+  .application__container {
+    padding: 80px 40px 78px;
+  }
+
+  .application__request {
+    max-width: 85%;
+  }
+
+  /* FOOTER-992 */
+  .footer__container {
+    padding: 80px 40px 78px;
+  }
+}
+
+@media (max-width: 768px) {
+  /* ABOUT-768 */
+  .about__descr {
+    max-width: 100%;
+  }
+
+  .statistic {
+    flex-wrap: wrap;
+  }
+
+  .statistic__items {   
+    margin-bottom: 30px; 
+    width: 100%;
+    max-width: 50%;
+  }
+
+  .statistic__items:last-child {
+    display: flex;
+  }
+
+  /* TRAINING-768 */
+  .training__text {
+    max-width: 100%;
+  }
+
+  .training__list {
+    flex-wrap: wrap;
+  }
+
+  .training__item {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: 45%;
+  }
+
+  .training__item:not(:last-child) {
+    margin-right: 0;
+  }
+
+  /* CAMPS-768 */
+  .camps__btn {
+    margin: 0 auto;
+    padding: 20px 35px;
+    display: block;
+    width: fit-content;
+  }
+
+  /* EVENTS-768 */
+  .events__text {
+    max-width: 100%;
+  }
+
+  .events__descr {
+    max-width: 100%;
+  }
+
+  .event-card__foto {
+    max-height: 400px;
+  }
+
+  .events-card__content {
+    padding: 40px 60px;
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    min-height: 166px;
+  }
+
+  /* APPLICATION-768 */
+  .application__container {
+    padding: 40px 30px;
+  }
+
+  .application__request {
+    padding: 50px 44px 66px 44px;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 568px) {
+  /* FOOTER-568 */
+  .footer__wrapper {
+    margin-bottom: 60px;
+    flex-direction: column;
+  }
+
+  .footer__requisites {
+    margin-bottom: 40px;
+  }
+
+  .footer__quote {
+    text-align: left;
+  }
+}
+
+@media (max-width: 400px) {
+  :root {
+    --font-main: 18px;
+    --font-secondary: 14px;
+    --font-title-section: 24px;
+    --font-number: 48px;
+  }
+
+  .container {
+    padding: 0 20px;
+  }
+
+  /* HEADER-400 */
+  .header {
+    margin-bottom: 60px;
+  }
+
+  .header__img {
+    display: none;
+  }
+
+  .header__img--mini {
+    display: block;
+    height: 50px;
+  }
+  
+  /* ABOUT-400 */ 
+  .about__container {
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+
+  .statistic__items {
+    margin-bottom: 40px;
+    max-width: 100%;
+  }
+
+  /* TRAINING-400 */
+  .training__item {
+    margin-right: 0;
+    margin-bottom: 20px;
+    max-width: 100%;
+  }
+
+  /* CAMPS-400 */
+  .camps__container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  /* EVENTS-400 */
+  .events-card__content {
+    padding: 40px 16px;
+    min-height: 100%;
+  }
+
+  /* REVIEWS-400 */
+  .reviews__container {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  .slide-info__logo {
+    margin: 0;
+    width: 60px;
+    height: 60px;
+  }
+
+  /* APPLICATION-400 */
+  .application__container {
+    padding: 40px 30px;  
+  }
+
+  .application__request {
+    padding: 40px 20px 46px;
+  }
+
+  .request__wrapper {
+    position: relative;
+    padding: 20px 0 0;
+  }
+
+  .request__input {
+    padding-left: 20px;
+    height: 55px;
+  }
+
+  /* FOOTER-400 */
+  .footer__container {
+    padding: 60px 20px 60px;
+  }
+  
+}
