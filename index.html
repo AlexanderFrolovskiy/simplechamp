@@ -1,0 +1,949 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="keywords" content="Спортивное агентство Чемпион" />
+  <meta name="description" content="Организация спортивных сборов, мероприятий, соревнований и турниров. Все виды спорта." />
+  <link rel="icon" href="/img/favicon.ico">
+  <title>ЦСП "ЧЕМПИОН"</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css"/>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/media.css">
+  <!-- JS -->
+  <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
+  <script src="/js/swiper.js" defer></script>
+  <script src="/js/script.js" defer></script>
+
+  <!-- Yandex.Metrika counter -->
+  <script type="text/javascript" >
+    (function(m,e,t,r,i,k,a){m[i]=m[i]||function(){(m[i].a=m[i].a||[]).push(arguments)};
+    m[i].l=1*new Date();k=e.createElement(t),a=e.getElementsByTagName(t)[0],k.async=1,k.src=r,a.parentNode.insertBefore(k,a)})
+    (window, document, "script", "https://mc.yandex.ru/metrika/tag.js", "ym");
+
+    ym(83589877, "init", {
+        clickmap:true,
+        trackLinks:true,
+        accurateTrackBounce:true,
+        webvisor:true
+    });
+  </script>
+  <noscript><div><img src="https://mc.yandex.ru/watch/83589877" style="position:absolute; left:-9999px;" alt="" /></div></noscript>
+  <!-- /Yandex.Metrika counter -->
+</head>
+
+<body class="body">
+  <header id="header" class="header">
+    <div class="container">
+      <div class="header__wrapper">
+        <a class="header__logo" href="index.html">
+          <img class="header__img" src="/img/logo.svg" alt="логотип Чемпион">
+          <img class="header__img--mini" src="/img/mini-logo.svg" alt="логотип Чемпион">
+        </a>
+        <nav class="header__nav">
+          <ul class="header__list">
+            <li class="header__item">
+              <a class="header__link" href="#training">Тренировки</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#camps">Спортивные сборы</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#events">Мероприятия</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#">Магазин</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#reviews">Отзывы</a>
+            </li>
+            <li class="header__item">
+              <a class="header__link" href="#contacts">Контакты</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="header__burger">
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+          <span class="header__burger-line"></span>
+        </button> 
+      </div>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="container hero-container">
+      <div class="swiper swiper-hero">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide swiper-hero__slide">
+            <div class="swiper-hero__content">
+              <h2 class="swiper-hero__title">Организация тренировочного процесса</h2>
+              <p class="swiper-hero__descr">Ищете удобную площадку для тренировок или вашей команде нужен опытный тренер? Найдем подходящие для вас варианты по оптимальным условиям. Обеспечим спортивным инвентарем и оборудованием!</p>
+              <a href="#application" class="swiper-hero__link">Хочу тренироваться</a>
+            </div>
+            <div class="swiper-hero__background swiper-hero__training"></div>
+          </div>
+          <div class="swiper-slide swiper-hero__slide swiper-hero__slide-event">
+            <div class="swiper-hero__content">
+              <h2 class="swiper-hero__title">Организация спортивных мероприятий</h2>
+              <p class="swiper-hero__descr">В поисках агентства, которое смогло бы организать спортивное мероприятие? Проведем мероприятие, которое понравится участникам, а вас порадует своей организацией.</p>
+              <a href="#application" class="swiper-hero__link">Хочу мероприятие</a>
+            </div>
+            <div class="swiper-hero__background swiper-hero__event"></div>
+          </div>
+          <div class="swiper-slide swiper-hero__slide swiper-hero__slide-camping">
+            <div class="swiper-hero__content">
+              <h2 class="swiper-hero__title">Организация спортивных сборов</h2>
+              <p class="swiper-hero__descr">В поисках места для проведения спортивных сборов? Найдем подходящее место для проведения эффективных сборов с лучшими условиями.</p>
+              <a href="#application" class="swiper-hero__link">Хочу на сборы</a>
+            </div>
+            <div class="swiper-hero__background swiper-hero__camping"></div>
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-hero"></div>
+      </div>
+    </div>    
+  </section>
+
+  <section class="about">
+    <div class="container">
+      <h2 class="title about__title">О нас</h2>
+      <div class="about__content">
+        <p class="about__descr">Спортивное агентство &laquo;Чемпион&raquo;&nbsp;&mdash; это команда, в&nbsp;которой работают люди неравнодушные к&nbsp;спорту и&nbsp;своей работе, имеющие как личный опыт в&nbsp;профессиональном спорте, так и&nbsp;опыт работы со&nbsp;спортсменами. Агентство специализируется на&nbsp;организации и&nbsp;проведении массовых спортивных мероприятий, спортивных турнирах, организации тренировочного процесса и&nbsp;организации спортивных сборов. Наше преимущество в&nbsp;том, что мы&nbsp;полностью закрываем все потребности команд и&nbsp;спортсменов, обеспечивая их&nbsp;всем необходимым.</p>
+        <div class="about__work">
+          <h3 class="about__work-title">Мы также работаем через:</h3>
+          <div class="about__work-image">
+            <img class="about__work-img" src="/img/about/provider-portal.svg" alt="Портал поставщиков">
+            <img class="about__work-img" src="/img/about/state-procurements.svg" alt="Государственные закупки">
+          </div>
+          <a href="#application" class="about__work-link">получить коммерческое предложение</a>
+        </div>
+      </div>
+    </div>
+    <div class="about__stat">
+      <div class="container about__container">
+        <ul class="statistic">
+          <li class="statistic__items">
+            <span class="statistic__number">9 лет</span>
+            <span class="statistic__text">опыт работы</span>
+          </li>
+          <li class="statistic__items">
+            <span class="statistic__number">90%</span>
+            <span class="statistic__text">клиентов обращаются повторно</span>
+          </li>
+          <li class="statistic__items">
+            <span class="statistic__number">28</span>
+            <span class="statistic__text">видов спорта</span>
+          </li>
+          <li class="statistic__items">
+            <span class="statistic__number">50+</span>
+            <span class="statistic__text">спортивных площадок</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="training" id="training">
+    <div class="container training__container">
+      <h2 class="title training__title">Организация тренировочного процесса</h2>
+      <p class="training__text">Как для спортсменов, выступающих в&nbsp;индивидуальных видах спорта, так и&nbsp;для спортивных команд. Предоставление во&nbsp;временное пользование спортивных площадок для любых видов спорта: футбол, баскетбол, волейбол, хоккей, плавание, художественная гимнастика, бадминтон, водное поло, спортивное метание ножа и&nbsp;другие. Разработка тренировочных программ, предоставление квалифицированных тренеров, обеспечение спортивным инвентарем.</p>
+      
+      <ul class="training__list">
+        <li class="training__item training__item-stadium">
+          <div class="training__item-text"><p>площадки</p></div>
+        </li>
+        <li class="training__item training__item-coach">          
+          <div class="training__item-text"><p>тренеры</p></div>
+        </liv>
+        <li class="training__item training__item-clothes">
+          <div class="training__item-text"><p>экипировка</p></div>
+        </li>
+        <li class="training__item training__item-equipment">
+          <div class="training__item-text"><p>инвентарь</p></div>
+        </li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="camps" id="camps" >
+    <div class="container camps__container">
+      <h2 class="title camps__title">Организация спортивных сборов</h2>
+      <ul class="camps__list">
+        <li class="camps__items">Организация проживания и&nbsp;питания</li>
+        <li class="camps__items">Организация трансфера, авиа и&nbsp;ж/д билетов</li>
+        <li class="camps__items">Помощь в&nbsp;получении визы</li>
+        <li class="camps__items">Организация тренировочного процесса, в&nbsp;т.ч. спаррингов</li>
+        <li class="camps__items">Организация фото и&nbsp;видео съемки, создание отчетных материалов</li>
+        <li class="camps__items">Организация вечерней развлекательной программы</li>
+        <li class="camps__items">Медицинское сопровождение и&nbsp;страхование спортсменов</li>
+        <li class="camps__items">Обеспечение спортивным инвентарем и&nbsp;оборудованием</li>
+      </ul>
+      <a class="link btn camps__btn" href="#request">Отправить заявку</a>
+    </div>
+  </section>
+
+  <section class="events" id="events" >
+    <div class="container events__container">
+      <h2 class="title events__title">Организация спортивно-массовых мероприятий</h2>
+      
+      <div class="events__content"> 
+        <div class="swiper swiper-video">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide swiper-slide-video">
+              <video class="events__video" width="100%" controls>
+                <source src='video/rugby.mp4' poster="/img/poster-rugby.jpg" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+              </video>
+            </div>
+            <div class="swiper-slide swiper-slide-video">
+              <video class="events__video" width="100%" controls>
+                <source src='video/hockey.mp4' poster="/img/poster-rugby.jpg" type='video/mp4; codecs="avc1.42E01E, mp4a.40.2"'>
+              </video>
+            </div>
+          </div>
+          <div class="swiper-pagination swiper-pagination-video"></div>
+        </div>        
+        <p class="events__text">Проведение турниров, соревнований и&nbsp;матчей в&nbsp;любом регионе России. Проведение конференций и&nbsp;форумов любой сложности. Составим концепцию для вашего мероприятия и&nbsp;реализуем ее&nbsp;точно в&nbsp;срок. Разработаем индивидуальный брендбук и&nbsp;изготовим сувенирную продукцию.</p>
+      </div>
+
+      <p class="events__descr">Проведение мероприятия это впервую очередь праздник для его участников. Как правило сотрудники, которые связаны с&nbsp;организацией мероприятия, не&nbsp;принимают участие в&nbsp;самих мероприятиях, так как постоянно заняты организационными вопросами. Наше агентство предлагает вам полный комплекс услуг по&nbsp;организации мероприятий любой сложности. Заказ мероприятие у&nbsp;нас вы&nbsp;позволите себе расслабиться и&nbsp;получить удовольствие от&nbsp;самого мероприятия, приняв в&nbsp;нем участие, не&nbsp;переживая о&nbsp;чем-либо.</p>
+      
+      <div class="swiper swiper-event">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide events__item" data-slide="hockey">            
+            <article class="events-card">
+              <img class="event-card__foto" src="/img/hockey/foto-hockey-1.jpg" alt="фотография с домашнего тура студенческой хоккейной лиги">
+              <div class="events-card__content">
+                <h3 class="events-card__title">студенческая хоккейная лига</h3> 
+              </div>
+            </article>           
+          </div>
+          <div class="swiper-slide events__item" data-slide="football">            
+            <article class="events-card">
+              <img class="event-card__foto" src="/img/football/foto-football-1.jpg" alt="хоккей">
+              <div class="events-card__content">
+                <h3 class="events-card__title">национальная студенческая футбольная лига</h3>
+              </div>
+            </article> 
+          </div>
+          <div class="swiper-slide events__item" data-slide="rugby">          
+            <article class="events-card">
+              <img class="event-card__foto" src="/img/rugby/foto-rugby-1.jpg" alt="регби">
+              <div class="events-card__content">
+                <h3 class="events-card__title">Всероссийские соревнования среди студентов по регби</h3>
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide events__item" data-slide="boxing">            
+            <article class="events-card">
+              <img class="event-card__foto" src="/img/boxing/foto-boxing-1.jpg" alt="бокс">
+              <div class="events-card__content">
+                <h3 class="events-card__title">Чемпионат Москвы по боксу среди студентов</h3>         
+              </div>
+            </article>
+          </div>
+          <div class="swiper-slide events__item" data-slide="knife">            
+            <article class="events-card">
+              <img class="event-card__foto" src="/img/knife/foto-knife-1.jpg" alt="спортивное метание ножа">
+              <div class="events-card__content">
+                <h3 class="events-card__title">чемпионат мира по спортивному метанию ножа</h3>
+              </div>
+            </article>    
+          </div>
+          <div class="swiper-slide events__item" data-slide="presentation">            
+            <article class="events-card">
+              <img class="event-card__foto" src="/img/presentation/foto-presentation-1.jpg" alt="презентация команды">
+              <div class="events-card__content">
+                <h3 class="events-card__title">Презентация хоккейной команды перед сезоном</h3>
+              </div>
+            </article>            
+          </div>
+        </div>
+        <div class="swiper-pagination swiper-pagination-event"></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-content" data-content="hockey">
+    <div class="container">
+      <button class="events-content__close">
+        <span class="events-content__close__line"></span>
+        <span class="events-content__close__line"></span>
+      </button>
+      <h3 class="title slider-events__title">Студенческая хоккейная лига</h3>
+      <div class="slider-content">
+        <div class="slider-image">
+          <div class="swiper mySwiper2 mySwiperLadgeHockey" style="--swiper-navigation-color: #d2bb43;">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-8.jpg" />
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-button-next--hockey"></div>
+            <div class="swiper-button-prev swiper-button-prev--hockey"></div>
+          </div>
+          <div class="swiper mySwiper mySwiperSmallHockey" thumbsSlider="" >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-1.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-2.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-3.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-4.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-5.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-6.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-7.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/hockey/foto-hockey-8.jpg" />
+              </div>
+            </div>
+          </div>          
+        </div>
+        <div class="slider-description">
+          <p class="slider-description__text">Всероссийские соревнования по&nbsp;хоккею среди студентов, состоящие из&nbsp;серии домашних туров для каждой из&nbsp;команд-участниц.</p>
+          <p class="slider-description__text">В&nbsp;организацию соревнований входило:</p>
+          <ul class="slider-description__list">
+            <li class="slider-description__items">Организация проживания и&nbsp;питания команд</li>
+            <li class="slider-description__items">Организация трансфера</li>
+            <li class="slider-description__items">Аренда спортивных сооружений для проведения игр</li>
+            <li class="slider-description__items">Брендирование спортивных сооружений</li>
+            <li class="slider-description__items">Изготовление памятных призов для участников</li>
+            <li class="slider-description__items">Организация церемонии открытия и&nbsp;закрытия тура</li>
+            <li class="slider-description__items">Приглашение и&nbsp;сопровождение вип-гостей</li>
+            <li class="slider-description__items">Организация кофе-брейков для вип-гостей</li>
+            <li class="slider-description__items">Организация дежурства скорой помощи на&nbsp;мероприятии</li>
+            <li class="slider-description__items">Организация онлайн-трансляции матчей</li>
+          </ul>
+          <button class="btn slide-description__btn" id="hockey-events-content__close-btn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-content" data-content="football">
+    <div class="container">
+      <button class="events-content__close">
+        <span class="events-content__close__line"></span>
+        <span class="events-content__close__line"></span>
+      </button>
+      <h3 class="title slider-events__title">Национальная студенческая футбольная лига</h3>
+      <div class="slider-content">
+        <div class="slider-image">
+          <div class="swiper mySwiper2 mySwiperLadgeFootball" style="--swiper-navigation-color: #d2bb43;">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-8.jpg" />
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-button-next--football"></div>
+            <div class="swiper-button-prev swiper-button-prev--football"></div>
+          </div>
+          <div class="swiper mySwiper mySwiperSmallFootball" thumbsSlider="">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/football/foto-football-8.jpg" />
+              </div>
+            </div>
+          </div>          
+        </div>
+        <div class="slider-description">
+          <p class="slider-description__text">Всероссийские соревнования по&nbsp;футболу среди студентов, состоящие из&nbsp;серии домашних туров, организованных одной из&nbsp;команд-участниц.</p>
+          <p class="slider-description__text">В&nbsp;организацию соревнований входило:</p>
+          <ul class="slider-description__list">
+            <li class="slider-description__items">Организация проживания и&nbsp;питания команд</li>
+            <li class="slider-description__items">Организация трансфера</li>
+            <li class="slider-description__items">Аренда спортивных сооружений для проведения игр</li>
+            <li class="slider-description__items">Брендирование спортивных сооружений</li>
+            <li class="slider-description__items">Изготовление памятных призов для участников</li>
+            <li class="slider-description__items">Организация церемонии открытия и&nbsp;закрытия тура</li>
+            <li class="slider-description__items">Приглашение и&nbsp;сопровождение вип-гостей</li>
+            <li class="slider-description__items">Организация кофе-брейков для вип-гостей</li>
+            <li class="slider-description__items">Организация дежурства скорой помощи на&nbsp;мероприятии</li>
+            <li class="slider-description__items">Организация онлайн-трансляции матчей</li>
+          </ul>
+          <button id="football-events-content__close-btn" class="btn slide-description__btn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-content" data-content="knife">
+    <div class="container">
+      <button class="events-content__close">
+        <span class="events-content__close__line"></span>
+        <span class="events-content__close__line"></span>
+      </button>
+      <h3 class="title slider-events__title">Чемпионат мира по спортивному метанию ножа</h3>
+      <div class="slider-content">
+        <div class="slider-image">
+          <div class="swiper mySwiper2 mySwiperLadgeKnife" style="--swiper-navigation-color: #d2bb43;">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-8.jpg" />
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-button-next--knife"></div>
+            <div class="swiper-button-prev swiper-button-prev--knife"></div>
+          </div>
+          <div class="swiper mySwiper mySwiperSmallKnife" thumbsSlider="">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/knife/foto-knife-8.jpg" />
+              </div>
+            </div>
+          </div>          
+        </div>
+        <div class="slider-description">
+          <p class="slider-description__text">&laquo;Спортивное метание ножа&raquo;&nbsp;&mdash; это вид спорта, включающий в&nbsp;себя метание ножа с&nbsp;различных дистанций в&nbsp;мишень, которая закреплена на&nbsp;деревянном стенде для метания.</p>
+          <p class="slider-description__text">В&nbsp;организацию чемпионата входило:</p>
+          <ul class="slider-description__list">
+            <li class="slider-description__items">Аренда спортивного сооружения</li>
+            <li class="slider-description__items">Брендирование спортивного сооружения</li>
+            <li class="slider-description__items">Изготовление памятных призов для участников</li>
+            <li class="slider-description__items">Организация церемонии открытия и&nbsp;закрытия чемпионата</li>
+            <li class="slider-description__items">Приглашение и&nbsp;сопровождение вип-гостей</li>
+            <li class="slider-description__items">Организация кофе-брейков для вип-гостей</li>
+            <li class="slider-description__items">Организация трансляции финалов на федеральном канале &laquo;Матч ТВ&raquo;</li>
+          </ul>
+          <button id="knife-events-content__close-btn" class="btn slide-description__btn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-content" data-content="rugby">
+    <div class="container">
+      <button class="events-content__close">
+        <span class="events-content__close__line"></span>
+        <span class="events-content__close__line"></span>
+      </button>
+      <h3 class="title slider-events__title">Всероссийские соревнования среди студентов по регби</h3>
+      <div class="slider-content">
+        <div class="slider-image">
+          <div class="swiper mySwiper2 mySwiperLadgeRugby" style="--swiper-navigation-color: #d2bb43;">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-8.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-9.jpg" />
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-button-next--rugby"></div>
+            <div class="swiper-button-prev swiper-button-prev--rugby"></div>
+          </div>
+          <div class="swiper mySwiper mySwiperSmallRugby" thumbsSlider="" >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-2.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-3.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-4.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-5.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-6.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-7.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-8.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/rugby/foto-rugby-9.jpg" />
+              </div>              
+            </div>
+          </div>          
+        </div>
+        <div class="slider-description">
+          <p class="slider-description__text">Всероссийские соревнования среди студентов по&nbsp;регби прошли в&nbsp;городе Севастополь.</p>
+          <p class="slider-description__text">В&nbsp;организацию соревнований входило:</p>
+          <ul class="slider-description__list">
+            <li class="slider-description__items">Организация проживания и&nbsp;питания для команд, судей и волонтеров</li>
+            <li class="slider-description__items">Организация перелета команд</li>
+            <li class="slider-description__items">Организация трансфера</li>
+            <li class="slider-description__items">Аренда спортивных сооружений для проведения игр</li>
+            <li class="slider-description__items">Брендирование спортивных сооружений</li>
+            <li class="slider-description__items">Подготовка игрового поля</li>
+            <li class="slider-description__items">Изготовление наградной продукции</li>
+            <li class="slider-description__items">Организация церемонии открытия и&nbsp;закрытия соревнований</li>
+            <li class="slider-description__items">Организация фото и&nbsp;видео съемок</li>
+          </ul>
+          <button id="rugby-events-content__close-btn" class="btn slide-description__btn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-content" data-content="boxing">
+    <div class="container">
+      <button class="events-content__close">
+        <span class="events-content__close__line"></span>
+        <span class="events-content__close__line"></span>
+      </button>
+      <h3 class="title slider-events__title">Чемпионат Москвы по боксу среди студентов</h3>
+      <div class="slider-content">
+        <div class="slider-image">
+          <div class="swiper mySwiper2 mySwiperLadgeBoxing" style="--swiper-navigation-color: #d2bb43;">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-1.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-8.jpg" />
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-button-next--boxing"></div>
+            <div class="swiper-button-prev swiper-button-prev--boxing"></div>
+          </div>
+          <div class="swiper mySwiper mySwiperSmallBoxing" thumbsSlider="" >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-1.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-2.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-3.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-4.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-5.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-6.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-7.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/boxing/foto-boxing-8.jpg" />
+              </div>
+            </div>
+          </div>          
+        </div>
+        <div class="slider-description">
+          <p class="slider-description__text">Чемпионат Москвы проходил на&nbsp;базе бойцовского клуба РЭУ&nbsp;им.&nbsp;Г.В.&nbsp;Плеханова. </p>
+          <p class="slider-description__text">В&nbsp;организацию чемпионата входило:</p>
+          <ul class="slider-description__list">
+            <li class="slider-description__items">Организация заявочной кампании, регистрация участников</li>
+            <li class="slider-description__items">Приглашение и&nbsp;сопровождение вип-гостей: Курнявка Андрей, Лебзяк Александр, Сычев Владимир</li>
+            <li class="slider-description__items">Изготовление наградной и&nbsp;сувенирной продукции</li>
+            <li class="slider-description__items">Брендирование зала</li>
+            <li class="slider-description__items">Организация торжественной церемонии открытия и награждения победителей и призеров</li>
+            <li class="slider-description__items">Организация фото и&nbsp;видео съемок</li>
+            <li class="slider-description__items">Организация автограф-сессии</li>
+            <li class="slider-description__items">Организация кофе-брейка для вип-гостей</li>
+            <li class="slider-description__items">Организация дежурства скорой помощи на&nbsp;чемпионате</li>
+          </ul>
+          <button id="boxing-events-content__close-btn" class="btn slide-description__btn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="events-content" data-content="presentation">
+    <div class="container">
+      <button class="events-content__close">
+        <span class="events-content__close__line"></span>
+        <span class="events-content__close__line"></span>
+      </button>
+      <h3 class="title slider-events__title">Презентация хоккейной команды перед сезоном</h3>
+      <div class="slider-content">
+        <div class="slider-image">
+          <div class="swiper mySwiper2 mySwiperLadgePresentation" style="--swiper-navigation-color: #d2bb43;">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-2.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-3.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-4.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-5.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-6.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-7.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-8.jpg" />
+              </div>
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-9.jpg" />
+              </div>
+            </div>
+            <div class="swiper-button-next swiper-button-next--presentation"></div>
+            <div class="swiper-button-prev swiper-button-prev--presentation"></div>
+          </div>
+          <div class="swiper mySwiper mySwiperSmallPresentation" thumbsSlider="" >
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-2.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-3.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-4.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-5.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-6.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-7.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-8.jpg" />
+              </div>
+              <div class="swiper-slide" >
+                <img class="swiper-slide__image" src="/img/presentation/foto-presentation-9.jpg" />
+              </div>              
+            </div>
+          </div>          
+        </div>
+        <div class="slider-description">
+          <p class="slider-description__text">Презентация хоккейной команды РЭУ&nbsp;им.&nbsp;Г.В.&nbsp;Плеханова перед сезоном и&nbsp;подписание соглашения о&nbsp;сотрудничестве между университетом и&nbsp;Федерацией хоккея России.</p>
+          <p class="slider-description__text">В&nbsp;организацию мероприятия входило:</p>
+          <ul class="slider-description__list">
+            <li class="slider-description__items">Организация торжественной церемонии подписания соглашений о сотрудничестве</li>
+            <li class="slider-description__items">Организация торжественной части презентации команды</li>
+            <li class="slider-description__items">Организация автограф-сессии </li>
+            <li class="slider-description__items">Изготовление памятных призов для участников</li>
+            <li class="slider-description__items">Приглашение и&nbsp;сопровождение вип-гостей: Третьяк Владислав, Раздольский Александр</li>
+            <li class="slider-description__items">Организация кофе-брейка для вип-гостей</li>
+            <li class="slider-description__items">Организация работы ведущего</li>
+          </ul>
+          <button id="presentation-events-content__close-btn" class="btn slide-description__btn">Закрыть</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="reviews" id="reviews">
+    <div class="container reviews__container">
+      <h2 class="title reviews__title">Отзывы</h2>
+      <div class="swiper swiper-reviews">
+        <div class="swiper-button-next swiper-button-next--reviews" style="--swiper-navigation-color: #d2bb43;"></div>
+        <div class="swiper-button-prev swiper-button-prev--reviews" style="--swiper-navigation-color: #d2bb43;"></div>
+        <div class="swiper-pagination swiper-pagination--reviews"></div>
+        <div class="swiper-wrapper">
+          <div class="swiper-slide slide-info">
+              <div class="slide-info__content">
+                <span class="slide-info__logo slide-info__shl"></span>
+                <span class="slide-info__name">Храмцов Антон 
+                  <span class="slide-info__position">исполнительный директор</span>
+                </span>
+              </div>
+              <p class="slide-info__text">&laquo;Организовывали с&nbsp;агентством серию турниров по&nbsp;хоккею среди студентов межрегионального уровня, в&nbsp;связи с&nbsp;этим выражаю огромную благодарность за&nbsp;профессионализм всей команде организаторов. Выполнили все задумки в&nbsp;срок и&nbsp;на&nbsp;высоком уровне. Команды и&nbsp;особенно игроки были довольны, по&nbsp;окончанию турниров выражали слова благодарности. А&nbsp;это самое важное! На&nbsp;все обращения, пожелания и&nbsp;обратную связь реагировали моментально, лично сам результатом очень доволен. Уверен, что еще не&nbsp;один раз будем работать с&nbsp;данным агентством&raquo;</p>
+          </div>
+          <div class="swiper-slide slide-info">
+            <div class="slide-info__content">
+              <span class="slide-info__logo slide-info__mgua"></span>
+              <span class="slide-info__name">Иванов Константин
+                <span class="slide-info__position">менеджер хоккейной команды</span>
+              </span> 
+            </div>
+            <p class="slide-info__text">&laquo;Долгое время не могли найти агентство на долгосрочное сотрудничество. И вот наконец нашли, работаем с этим агентством уже на протяжении трех сезонов, всем довольны, наша хоккейная команда занимается на хороших площадках в удобные для студентов дни и время. Специалисты агентства разбираются в хоккее и понимают, что нужно команде для достижения высоких результатов. По согласованию делают переносы занятий, что также важно для нашей команды, чтобы не пропадали тренировки или при необходимости сделать тренировочный процесс удобнее перед важными матчами. В общем, всем, кто в поисках надежного партнера, рекомендую агентство - свое дело знают!&raquo;</p>
+          </div>
+          <div class="swiper-slide slide-info">
+            <div class="slide-info__content">
+              <span class="slide-info__logo slide-info__rugby"></span>
+              <span class="slide-info__name">Хорохорин Андрей
+                <span class="slide-info__position">президент студенческой регбийной лиги</span>
+              </span> 
+            </div>
+            <p class="slide-info__text">&laquo;Выражаю благодарность спортивному агентству во&nbsp;главе с&nbsp;Фроловским Александром за&nbsp;организацию Всероссийских соревнований по&nbsp;регби среди студентов в&nbsp;городе Севастополь. Команда организаторов справилась с&nbsp;рядом сложных задач, в&nbsp;том числе в&nbsp;режиме онлайн, что позволило провести соревнования на&nbsp;высоком уровне, участники соревнований остались довольны, выразив благодарность за&nbsp;отличную организацию соревнований. Мне как руководителю лиги очень важно, чтобы каждое мероприятие было проведено качественно от&nbsp;начала и&nbsp;до&nbsp;конца, с&nbsp;чем агентство и&nbsp;справилось.&raquo;</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="application" id="application">
+    <div class="container application__container">
+      <form id="request" class="form request application__request" action="send.php" method="POST">
+        <h2 class="title application__title" id="application">Отправить заявку</h2>
+        <div class="request__wrapper">
+          <label class="visually-hidden" for="name">Имя</label>
+          <input id="name" class="request__input"  type="text" name="name" placeholder="Имя" data-validate-field="name">
+        </div>    
+        
+        <div class="request__wrapper">
+          <label class="visually-hidden" for="tel">Телефон</label>
+          <input id="tel" type="tel" name="tel" class="request__input" placeholder="Телефон" data-validate-field="tel">
+        </div>
+        
+        <div class="request__wrapper">
+          <label class="visually-hidden" for="email">Электронная почта</label>
+          <input id="email" type="email" name="email" class="request__input" placeholder="Электронная почта" data-validate-field="email">
+        </div>
+        
+        <div class="request__wrapper">
+          <label class="visually-hidden" for="comment">Комментарий</label>
+          <textarea id="comment" class="request__textarea"  name="comment" rows="10" placeholder="Комментарий" data-validate-field="comment"></textarea>
+        </div>
+        
+        <label class="request-checkbox__label" for="checkbox">
+          <input id="checkbox" class="request-checkbox__input" type="checkbox" name="checkbox" required>
+          согласие на обработку персональных данных
+          <span></span>
+        </label>
+        <div class="request-btn__wrapper">
+          <span id="success" class="form-success"></span>
+          <span id="fail" class="form-fail"></span>
+          <button class="request__btn" type="submit">Отправить</button>          
+        </div>
+      </form>      
+    </div>
+  </section>
+
+  <footer class="footer" id="contacts">
+    <div class="container footer__container">
+      <div class="footer__wrapper">
+        <ul class="footer__requisites footer-requisites">
+          <li class="footer-requisites__item">
+            <h3 class="visually-hidden">Реквизиты организации</h3>
+          </li>
+          <li class="footer-requisites__item">ооо &laquo;цсп &laquo;чемпион&raquo;</li>
+          <li class="footer-requisites__item">инн 7724489438</li>
+          <li class="footer-requisites__item">кпп 772401001</li>
+        </ul> 
+        <span class="footer__quote">&laquo;Спорт&nbsp;&mdash; возможный источник самосовершенствования для каждого человека&raquo; (Пьер де&nbsp;Кубертен)</span>
+      </div>
+      <div class="footer-requisites__secondary">
+        <span class="footer__copyright"></span>
+        <a class="link footer__link" href="#header">
+          <svg  width="60" height="60" viewBox="0 0 130 130"  xmlns="http://www.w3.org/2000/svg">
+            <path d="M65 0C29.0996 0 0 29.0996 0 65C0 100.9 29.0996 130 65 130C100.9 130 130 100.896 130 65C130 29.1039 100.9 0 65 0ZM99.6775 83.4275C98.089 85.016 95.5175 85.016 93.9331 83.4275L65 54.4944L36.071 83.4232C34.4825 85.0119 31.911 85.0119 30.3265 83.4232C28.7381 81.8348 28.7381 79.2633 30.3265 77.679L61.4331 46.5725C62.4081 45.5975 63.7406 45.2969 65.0042 45.5161C66.2637 45.2927 67.6002 45.5975 68.5752 46.5725L99.6817 77.679C101.262 79.2675 101.262 81.839 99.6775 83.4275Z" />
+          </svg>
+        </a>
+      </div>
+    </div>
+  </footer>
+
+  <section class="popup-burger">
+    <div class="container popup-burger__container">
+      <nav class="popup-burger__nav">
+        <ul class="popup-burger__list">
+          <li class="popup-burger__item">
+            <a class="popup-burger__link" href="#training">Тренировки</a>
+          </li>
+          <li class="popup-burger__item">
+            <a class="popup-burger__link" href="#events">Спортивные сборы</a>
+          </li>
+          <li class="popup-burger__item">
+            <a class="popup-burger__link" href="#">Мероприятия</a>
+          </li>   
+          <li class="popup-burger__item">
+            <a class="popup-burger__link" href="#">Магазин</a>
+          </li>
+          <li class="popup-burger__item">
+            <a class="popup-burger__link" href="#reviews">Отзывы</a>
+          </li>
+          <li class="popup-burger__item">
+            <a class="popup-burger__link" href="#contacts">Контакты</a>
+          </li>
+        </ul>
+      </nav>
+      <button class="popup-burger__closed">
+        <span class="popup-burger__line"></span>
+        <span class="popup-burger__line"></span>
+      </button>
+    </div>
+  </section>
+
+  
+
+  <script src="/js/just-validate.min.js"></script>
+  <script src="/js/jquery.inputmask.js"></script>
+  <script src="/js/form.js"></script>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+
+  <script>
+    $('#request').on('submit', function(event) {
+        event.preventDefault();
+        $.post( './php/send.php', { name: $("input[name='name']").val(), tel: $("input[name='tel']").val(), email: $("input[name='email']").val(), comment: $("textarea[name='comment']").val() } ).done(function() {
+            $("#success").text("Заявка успешно отправлена")}).fail(function() {
+                $("#fail").text("Произошла ошибка, попробуйте снова")
+        });
+    });
+  </script>
+</body>
+
+</html>
