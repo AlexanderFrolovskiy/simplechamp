@@ -321,13 +321,49 @@
     padding: 50px 44px 66px 44px;
     max-width: 100%;
   }
+  
+  .request__btn {
+    padding: 20px 80px;
+  }
 }
 
 @media (max-width: 568px) {
+  .container {
+      padding-left: 24px;
+      padding-right: 24px;
+  }
+  /* HEADER-568 */
+  .header {
+    margin-bottom: 40px;
+  }
+
+  /* TRANING-568 */
+  .training__item {
+    max-width: 48%;
+  }
+
+  /* EVENT-568 */
+  .events-card__content {
+    padding: 20px 30px;
+  }
+
+  .events__item {
+    padding: 0px;
+  }
+
+  /* REVIEWS-568 */
+  .slide-info__content {
+    margin-bottom: 40px;
+  }
+
   /* FOOTER-568 */
   .footer__wrapper {
     margin-bottom: 60px;
     flex-direction: column;
+  }
+
+  .footer__quote {
+    max-width: 100%;
   }
 
   .footer__requisites {
@@ -348,7 +384,8 @@
   }
 
   .container {
-    padding: 0 20px;
+    padding-left: 15px;
+    padding-right: 15px;
   }
 
   /* HEADER-400 */
@@ -391,8 +428,12 @@
 
   /* EVENTS-400 */
   .events-card__content {
-    padding: 40px 16px;
-    min-height: 100%;
+    padding: 10px 16px;
+    min-height: 140px;
+  }
+
+  .events-card__title {
+    padding: 10px 10px;
   }
 
   /* REVIEWS-400 */
@@ -407,9 +448,13 @@
     height: 60px;
   }
 
+  .slide-info__content {
+    min-width: 240px;
+  }
+
   /* APPLICATION-400 */
   .application__container {
-    padding: 40px 30px;  
+    padding: 40px 15px;  
   }
 
   .application__request {

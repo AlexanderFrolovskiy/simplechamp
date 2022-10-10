@@ -387,7 +387,6 @@ img {
 }
 
 .statistic {
-  margin-left: -30px;
   display: flex;
   flex-shrink: 1;
   justify-content: space-between;
@@ -638,6 +637,11 @@ img {
   cursor: pointer;
 }
 
+.event-card__wrapper {
+  max-height: 506px;
+  overflow: hidden;
+}
+
 .event-card__foto {
   object-fit: cover;
 }
@@ -663,7 +667,7 @@ img {
   transition: color .5s ease;
 }
 
-.events-card:hover .event-card__foto {  
+.events-card:hover .event-card__foto { 
   transform: scale(1.05);  
   transition: transform .5s ease; 
 }
