@@ -63,6 +63,9 @@
   --color-secondary-opacity: rgba(255, 255, 255, 0.8);
   --color-error: #ff4a4a;
   --color-success: #00ff00;
+  --color-btn: #88c639;
+  --color-btn-hover: #6b9b2e;
+  --color-btn-active: #557926;
 }
 
 html {
@@ -133,14 +136,14 @@ img {
   cursor: pointer;
 }
 
-.btn:focus {
+.btn:focus-visible {
   outline: none;
   color: var(--color-secondary);
   background-color: var(--color-detailed);
   transition: color .5s ease, background-color .5s ease;
 }
 
-.btn:hover {
+.btn:hover:not(:focus-visible) {
   color: var(--color-secondary);
   transition: color .5s ease;
 }
@@ -150,7 +153,7 @@ img {
   transition: transform .5s ease;  
 }
 
-.btn:active {
+.btn:active:not(:focus-visible) {
   color: var(--color-secondary);
   background-color: var(--color-active);
   transition: color .5s ease, background-color .5s ease;
@@ -196,6 +199,25 @@ img {
 .header__link {
   font-size: var(--font-main);
   color: var(--color-secondary);
+  cursor: pointer;
+  transition-property: color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.header__link:focus-visible {
+  outline: none;
+  color: var(--color-detailed);
+}
+
+.header__link:hover:not(:focus-visible) {
+  outline: none;
+  color: var(--color-detailed);
+}
+
+.header__link:active:not(:focus-visible) {
+  outline: none;
+  color: var(--color-active);
 }
 
 .header__burger {
@@ -208,6 +230,10 @@ img {
   cursor: pointer;
 }
 
+.header__burger:focus-visible {
+  outline: none;
+}
+
 .header__burger-line {
   position: absolute;
   top: 0;
@@ -215,6 +241,9 @@ img {
   width: 100%;
   height: 2.5px;
   background-color: var(--color-secondary);
+  transition-property: background-color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
 }
 
 .header__burger-line:nth-child(2) {
@@ -225,6 +254,18 @@ img {
 .header__burger-line:nth-child(3) {
   top: 100%;
   transform: translateY(-50%);
+}
+
+.header__burger:focus-visible .header__burger-line {
+  background-color: var(--color-detailed);
+}
+
+.header__burger:hover:not(:focus-visible) .header__burger-line {
+  background-color: var(--color-detailed);
+}
+
+.header__burger:active:not(:focus-visible) .header__burger-line {
+  background-color: var(--color-active);
 }
 
 /* HERO-1920 */
@@ -269,8 +310,11 @@ img {
 }
 
 .swiper-hero__content {
-  position: relative;
   padding: 80px 0 120px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
   height: 100%;
   max-width: 50%;
 }
@@ -292,22 +336,37 @@ img {
   color: var(--color-secondary);
 }
 
-.swiper-hero__link {
-  position: absolute;
-  bottom: 60px;
-  /* left: 0; */
+.btn__link {
+  /* position: absolute;
+  bottom: 60px; */
   padding: 20px 35px;
   display: inline-block;
   border-radius: 20px;
   font-size: var(--font-main);
   color: var(--color-secondary);
-  background-color: #88c639;
+  background-color: var(--color-btn);
+  transition-property: outline, background-color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.btn__link:focus-visible {
+  outline: 2px solid var(--color-detailed);
+}
+
+.btn__link:hover:not(:focus-visible) {
+  background-color: var(--color-btn-hover);
+}
+
+.btn__link:active:not(:focus-visible) {
+  background-color: var(--color-btn-active);
 }
 
 .swiper-pagination-bullets.swiper-pagination-horizontal-hero {
   bottom: 30px;
   left: 0;
   width: 100%;
+  cursor: pointer;
 }
 
 .swiper-pagination-bullet-hero {
@@ -318,6 +377,23 @@ img {
   border-radius: 5px;  
   background: var(--swiper-pagination-bullet-inactive-color,#000);
   opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.swiper-pagination-bullet-hero:focus-visible {
+  outline: none;
+  background-color: var(--color-detailed);
+}
+
+.swiper-pagination-bullet-hero:hover:not(:focus-visible) {
+  background-color: var(--color-detailed);
+}
+
+.swiper-pagination-bullet-hero:active:not(:focus-visible) {
+  background-color: var(--color-active);
 }
 
 .swiper-pagination-hero--active {
@@ -375,6 +451,22 @@ img {
   line-height: 108%;
   letter-spacing: 0.05em;  
   color: #0065dd;
+  transition-property: color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.about__work-link:focus-visible {
+  outline: none;
+  color: var(--color-detailed);
+}
+
+.about__work-link:hover:not(:focus-visible) {
+  color: var(--color-detailed);
+}
+
+.about__work-link:active:not(:focus-visible) {
+  color: var(--color-active);
 }
 
 .about__stat {
