@@ -337,10 +337,9 @@ img {
 }
 
 .btn__link {
-  /* position: absolute;
-  bottom: 60px; */
   padding: 20px 35px;
   display: inline-block;
+  border: none;
   border-radius: 20px;
   font-size: var(--font-main);
   color: var(--color-secondary);
@@ -360,6 +359,11 @@ img {
 
 .btn__link:active:not(:focus-visible) {
   background-color: var(--color-btn-active);
+}
+
+.btn__link--center {
+  margin: 0 auto;
+  display: block;
 }
 
 .swiper-pagination-bullets.swiper-pagination-horizontal-hero {
@@ -659,6 +663,23 @@ img {
   border-radius: 50%;  
   background: var(--swiper-pagination-bullet-inactive-color,#000);
   opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.swiper-pagination-bullet-video:focus-visible {
+  outline: none;
+  background-color: var(--color-detailed);
+}
+
+.swiper-pagination-bullet-video:hover:not(:focus-visible) {
+  background-color: var(--color-detailed);
+}
+
+.swiper-pagination-bullet-video:active:not(:focus-visible) {
+  background-color: var(--color-active);
 }
 
 .swiper-pagination-video--active {
@@ -706,6 +727,23 @@ img {
   border-radius: 50%;  
   background: var(--swiper-pagination-bullet-inactive-color,#000);
   opacity: var(--swiper-pagination-bullet-inactive-opacity, .2);
+  cursor: pointer;
+  transition-property: background-color;
+  transition-duration: .3s;
+  transition-timing-function: ease-in-out;
+}
+
+.swiper-pagination-bullet-event:focus-visible {
+  outline: none;
+  background-color: var(--color-detailed);
+}
+
+.swiper-pagination-bullet-event:hover:not(:focus-visible) {
+  background-color: var(--color-detailed);
+}
+
+.swiper-pagination-bullet-event:active:not(:focus-visible) {
+  background-color: var(--color-active);
 }
 
 .swiper-pagination-event--active {
@@ -888,13 +926,13 @@ img {
 
 .slider-description {
   max-width: 50%;
+  color: #c9c9c9;
 }
 
 .slider-description__text {
   margin: 0 0 20px;
   font-size: var(--font-main);
   line-height: 150%;
-  color: var(--color-main);
 }
 
 .slider-description__list {
@@ -908,17 +946,6 @@ img {
   line-height: 150%;
   list-style: circle;
   color: var(--color-main);
-}
-
-.slide-description__btn {
-  margin: 0 auto;
-  padding: 20px 35px;
-  display: block;
-  border: none;
-  border-radius: 20px;
-  font-size: var(--font-main);
-  color: var(--color-secondary);
-  background-color: #88c639;
 }
 
 /* REVIEWS - 1920*/
