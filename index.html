@@ -853,22 +853,22 @@
         <h2 class="title application__title" id="application">Отправить заявку</h2>
         <div class="request__wrapper">
           <label class="visually-hidden" for="name">Имя</label>
-          <input id="name" class="request__input"  type="text" name="name" placeholder="Имя" data-validate-field="name">
+          <input id="name" class="request__input"  type="text" name="name" placeholder="Имя" required>
         </div>    
         
         <div class="request__wrapper">
           <label class="visually-hidden" for="tel">Телефон</label>
-          <input id="tel" type="tel" name="tel" class="request__input" placeholder="Телефон" data-validate-field="tel">
+          <input id="tel" type="tel" name="tel" class="request__input" placeholder="Телефон" required>
         </div>
         
         <div class="request__wrapper">
           <label class="visually-hidden" for="email">Электронная почта</label>
-          <input id="email" type="email" name="email" class="request__input" placeholder="Электронная почта" data-validate-field="email">
+          <input id="email" type="email" name="email" class="request__input" placeholder="Электронная почта" required>
         </div>
         
         <div class="request__wrapper">
           <label class="visually-hidden" for="comment">Комментарий</label>
-          <textarea id="comment" class="request__textarea"  name="comment" rows="10" placeholder="Комментарий" data-validate-field="comment"></textarea>
+          <textarea id="comment" class="request__textarea" row="1" name="comment" placeholder="Комментарий"></textarea>
         </div>
         
         <label class="request-checkbox__label" for="checkbox">
@@ -879,7 +879,7 @@
         <div class="request-btn__wrapper">
           <span id="success" class="form-success"></span>
           <span id="fail" class="form-fail"></span>
-          <button class="request__btn" type="submit">Отправить</button>          
+          <button class="btn btn__link" type="submit">Отправить</button>          
         </div>
       </form>      
     </div>
@@ -939,12 +939,7 @@
       </button>
     </div>
   </section>
-
   
-
-  <script src="/js/just-validate.min.js"></script>
-  <script src="/js/jquery.inputmask.js"></script>
-  <script src="/js/form.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <script>
