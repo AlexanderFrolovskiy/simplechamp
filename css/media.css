@@ -376,6 +376,15 @@
     margin-bottom: 40px;
   }
 
+  .header__img {
+    display: none;
+  }
+
+  .header__img--mini {
+    display: block;
+    height: 50px;
+  }
+
   /* TRANING-568 */
   .training__item {
     max-width: 48%;
@@ -439,14 +448,7 @@
     margin-bottom: 60px;
   }
 
-  .header__img {
-    display: none;
-  }
-
-  .header__img--mini {
-    display: block;
-    height: 50px;
-  }
+  
   
   /* ABOUT-400 */ 
   .about__container {
