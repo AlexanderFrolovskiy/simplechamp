@@ -84,7 +84,7 @@
             <div class="swiper-hero__content">
               <h2 class="swiper-hero__title">Организация тренировочного процесса</h2>
               <p class="swiper-hero__descr">Ищете удобную площадку для тренировок или вашей команде нужен опытный тренер? Найдем подходящие для вас варианты по оптимальным условиям. Обеспечим спортивным инвентарем и оборудованием!</p>
-              <a href="#application" class="swiper-hero__link">Хочу тренироваться</a>
+              <a href="#application" class="btn__link">Хочу тренироваться</a>
             </div>
             <div class="swiper-hero__background swiper-hero__training"></div>
           </div>
@@ -92,7 +92,7 @@
             <div class="swiper-hero__content">
               <h2 class="swiper-hero__title">Организация спортивных мероприятий</h2>
               <p class="swiper-hero__descr">В поисках агентства, которое смогло бы организать спортивное мероприятие? Проведем мероприятие, которое понравится участникам, а вас порадует своей организацией.</p>
-              <a href="#application" class="swiper-hero__link">Хочу мероприятие</a>
+              <a href="#application" class="btn__link">Хочу мероприятие</a>
             </div>
             <div class="swiper-hero__background swiper-hero__event"></div>
           </div>
@@ -100,7 +100,7 @@
             <div class="swiper-hero__content">
               <h2 class="swiper-hero__title">Организация спортивных сборов</h2>
               <p class="swiper-hero__descr">В поисках места для проведения спортивных сборов? Найдем подходящее место для проведения эффективных сборов с лучшими условиями.</p>
-              <a href="#application" class="swiper-hero__link">Хочу на сборы</a>
+              <a href="#application" class="btn__link">Хочу на сборы</a>
             </div>
             <div class="swiper-hero__background swiper-hero__camping"></div>
           </div>
@@ -151,7 +151,7 @@
 
   <section class="training" id="training">
     <div class="container training__container">
-      <h2 class="title training__title">Организация тренировочного процесса</h2>
+      <h2 class="title training__title">Организация тренировок</h2>
       <p class="training__text">Как для спортсменов, выступающих в&nbsp;индивидуальных видах спорта, так и&nbsp;для спортивных команд. Предоставление во&nbsp;временное пользование спортивных площадок для любых видов спорта: футбол, баскетбол, волейбол, хоккей, плавание, художественная гимнастика, бадминтон, водное поло, спортивное метание ножа и&nbsp;другие. Разработка тренировочных программ, предоставление квалифицированных тренеров, обеспечение спортивным инвентарем.</p>
       
       <ul class="training__list">
@@ -173,7 +173,7 @@
 
   <section class="camps" id="camps" >
     <div class="container camps__container">
-      <h2 class="title camps__title">Организация спортивных сборов</h2>
+      <h2 class="title camps__title">Организация сборов</h2>
       <ul class="camps__list">
         <li class="camps__items">Организация проживания и&nbsp;питания</li>
         <li class="camps__items">Организация трансфера, авиа и&nbsp;ж/д билетов</li>
@@ -184,13 +184,13 @@
         <li class="camps__items">Медицинское сопровождение и&nbsp;страхование спортсменов</li>
         <li class="camps__items">Обеспечение спортивным инвентарем и&nbsp;оборудованием</li>
       </ul>
-      <a class="link btn camps__btn" href="#request">Отправить заявку</a>
+      <a class="link btn btn__link" href="#application">Отправить заявку</a>
     </div>
   </section>
 
   <section class="events" id="events" >
     <div class="container events__container">
-      <h2 class="title events__title">Организация спортивно-массовых мероприятий</h2>
+      <h2 class="title events__title">Организация мероприятий</h2>
       
       <div class="events__content"> 
         <div class="swiper swiper-video">
@@ -217,7 +217,9 @@
         <div class="swiper-wrapper">
           <div class="swiper-slide events__item" data-slide="hockey">            
             <article class="events-card">
-              <img class="event-card__foto" src="/img/hockey/foto-hockey-1.jpg" alt="фотография с домашнего тура студенческой хоккейной лиги">
+              <div class="event-card__wrapper">
+                <img class="event-card__foto" src="/img/hockey/foto-hockey-1.jpg" alt="фотография с домашнего тура студенческой хоккейной лиги">
+              </div>
               <div class="events-card__content">
                 <h3 class="events-card__title">студенческая хоккейная лига</h3> 
               </div>
@@ -225,7 +227,9 @@
           </div>
           <div class="swiper-slide events__item" data-slide="football">            
             <article class="events-card">
-              <img class="event-card__foto" src="/img/football/foto-football-1.jpg" alt="хоккей">
+              <div class="event-card__wrapper">
+                <img class="event-card__foto" src="/img/football/foto-football-1.jpg" alt="хоккей">
+              </div>
               <div class="events-card__content">
                 <h3 class="events-card__title">национальная студенческая футбольная лига</h3>
               </div>
@@ -233,7 +237,9 @@
           </div>
           <div class="swiper-slide events__item" data-slide="rugby">          
             <article class="events-card">
-              <img class="event-card__foto" src="/img/rugby/foto-rugby-1.jpg" alt="регби">
+              <div class="event-card__wrapper">
+                <img class="event-card__foto" src="/img/rugby/foto-rugby-1.jpg" alt="регби">
+              </div>
               <div class="events-card__content">
                 <h3 class="events-card__title">Всероссийские соревнования среди студентов по регби</h3>
               </div>
@@ -241,7 +247,9 @@
           </div>
           <div class="swiper-slide events__item" data-slide="boxing">            
             <article class="events-card">
-              <img class="event-card__foto" src="/img/boxing/foto-boxing-1.jpg" alt="бокс">
+              <div class="event-card__wrapper">
+                <img class="event-card__foto" src="/img/boxing/foto-boxing-1.jpg" alt="бокс">
+              </div>
               <div class="events-card__content">
                 <h3 class="events-card__title">Чемпионат Москвы по боксу среди студентов</h3>         
               </div>
@@ -249,7 +257,9 @@
           </div>
           <div class="swiper-slide events__item" data-slide="knife">            
             <article class="events-card">
-              <img class="event-card__foto" src="/img/knife/foto-knife-1.jpg" alt="спортивное метание ножа">
+              <div class="event-card__wrapper">
+                <img class="event-card__foto" src="/img/knife/foto-knife-1.jpg" alt="спортивное метание ножа">
+              </div>
               <div class="events-card__content">
                 <h3 class="events-card__title">чемпионат мира по спортивному метанию ножа</h3>
               </div>
@@ -257,7 +267,9 @@
           </div>
           <div class="swiper-slide events__item" data-slide="presentation">            
             <article class="events-card">
-              <img class="event-card__foto" src="/img/presentation/foto-presentation-1.jpg" alt="презентация команды">
+              <div class="event-card__wrapper">
+                <img class="event-card__foto" src="/img/presentation/foto-presentation-1.jpg" alt="презентация команды">
+              </div>
               <div class="events-card__content">
                 <h3 class="events-card__title">Презентация хоккейной команды перед сезоном</h3>
               </div>
@@ -352,7 +364,7 @@
             <li class="slider-description__items">Организация дежурства скорой помощи на&nbsp;мероприятии</li>
             <li class="slider-description__items">Организация онлайн-трансляции матчей</li>
           </ul>
-          <button class="btn slide-description__btn" id="hockey-events-content__close-btn">Закрыть</button>
+          <button class="btn btn__link btn__link--center slider-description__closed" id="hockey-events-content__close-btn">Закрыть</button>
         </div>
       </div>
     </div>
@@ -441,7 +453,7 @@
             <li class="slider-description__items">Организация дежурства скорой помощи на&nbsp;мероприятии</li>
             <li class="slider-description__items">Организация онлайн-трансляции матчей</li>
           </ul>
-          <button id="football-events-content__close-btn" class="btn slide-description__btn">Закрыть</button>
+          <button class="btn btn__link btn__link--center slider-description__closed" id="football-events-content__close-btn">Закрыть</button>
         </div>
       </div>
     </div>
@@ -527,7 +539,7 @@
             <li class="slider-description__items">Организация кофе-брейков для вип-гостей</li>
             <li class="slider-description__items">Организация трансляции финалов на федеральном канале &laquo;Матч ТВ&raquo;</li>
           </ul>
-          <button id="knife-events-content__close-btn" class="btn slide-description__btn">Закрыть</button>
+          <button class="btn btn__link btn__link--center slider-description__closed" id="knife-events-content__close-btn">Закрыть</button>
         </div>
       </div>
     </div>
@@ -615,7 +627,7 @@
             <li class="slider-description__items">Организация церемонии открытия и&nbsp;закрытия соревнований</li>
             <li class="slider-description__items">Организация фото и&nbsp;видео съемок</li>
           </ul>
-          <button id="rugby-events-content__close-btn" class="btn slide-description__btn">Закрыть</button>
+          <button class="btn btn__link btn__link--center slider-description__closed" id="rugby-events-content__close-btn">Закрыть</button>
         </div>
       </div>
     </div>
@@ -703,7 +715,7 @@
             <li class="slider-description__items">Организация кофе-брейка для вип-гостей</li>
             <li class="slider-description__items">Организация дежурства скорой помощи на&nbsp;чемпионате</li>
           </ul>
-          <button id="boxing-events-content__close-btn" class="btn slide-description__btn">Закрыть</button>
+          <button class="btn btn__link btn__link--center slider-description__closed" id="boxing-events-content__close-btn">Закрыть</button>
         </div>
       </div>
     </div>
@@ -789,7 +801,7 @@
             <li class="slider-description__items">Организация кофе-брейка для вип-гостей</li>
             <li class="slider-description__items">Организация работы ведущего</li>
           </ul>
-          <button id="presentation-events-content__close-btn" class="btn slide-description__btn">Закрыть</button>
+          <button class="btn btn__link btn__link--center slider-description__closed" id="presentation-events-content__close-btn">Закрыть</button>
         </div>
       </div>
     </div>
@@ -819,7 +831,7 @@
                 <span class="slide-info__position">менеджер хоккейной команды</span>
               </span> 
             </div>
-            <p class="slide-info__text">&laquo;Долгое время не могли найти агентство на долгосрочное сотрудничество. И вот наконец нашли, работаем с этим агентством уже на протяжении трех сезонов, всем довольны, наша хоккейная команда занимается на хороших площадках в удобные для студентов дни и время. Специалисты агентства разбираются в хоккее и понимают, что нужно команде для достижения высоких результатов. По согласованию делают переносы занятий, что также важно для нашей команды, чтобы не пропадали тренировки или при необходимости сделать тренировочный процесс удобнее перед важными матчами. В общем, всем, кто в поисках надежного партнера, рекомендую агентство - свое дело знают!&raquo;</p>
+            <p class="slide-info__text">&laquo;Работаем с этим агентством уже на протяжении трех сезонов, всем довольны, наша хоккейная команда занимается на хороших площадках в удобные дни и время. Специалисты агентства разбираются в хоккее и понимают, что нужно команде для достижения высоких результатов. По согласованию делают переносы занятий, что также важно для нашей команды, чтобы не пропадали тренировки или при необходимости сделать тренировочный процесс удобнее перед важными матчами. В общем, всем, кто в поисках надежного партнера, рекомендую агентство - свое дело знают!&raquo;</p>
           </div>
           <div class="swiper-slide slide-info">
             <div class="slide-info__content">
@@ -828,7 +840,7 @@
                 <span class="slide-info__position">президент студенческой регбийной лиги</span>
               </span> 
             </div>
-            <p class="slide-info__text">&laquo;Выражаю благодарность спортивному агентству во&nbsp;главе с&nbsp;Фроловским Александром за&nbsp;организацию Всероссийских соревнований по&nbsp;регби среди студентов в&nbsp;городе Севастополь. Команда организаторов справилась с&nbsp;рядом сложных задач, в&nbsp;том числе в&nbsp;режиме онлайн, что позволило провести соревнования на&nbsp;высоком уровне, участники соревнований остались довольны, выразив благодарность за&nbsp;отличную организацию соревнований. Мне как руководителю лиги очень важно, чтобы каждое мероприятие было проведено качественно от&nbsp;начала и&nbsp;до&nbsp;конца, с&nbsp;чем агентство и&nbsp;справилось.&raquo;</p>
+            <p class="slide-info__text">&laquo;Выражаю благодарность спортивному агентству во&nbsp;главе с&nbsp;Фроловским Александром за&nbsp;организацию Всероссийских соревнований по&nbsp;регби среди студентов в&nbsp;городе Севастополь. Команда организаторов справилась с&nbsp;рядом сложных задач, что позволило провести соревнования на&nbsp;высоком уровне, участники соревнований остались довольны, выразив благодарность за&nbsp;отличную организацию соревнований. Мне как руководителю лиги очень важно, чтобы каждое мероприятие было проведено качественно от&nbsp;начала и&nbsp;до&nbsp;конца, с&nbsp;чем агентство и&nbsp;справилось.&raquo;</p>
           </div>
         </div>
       </div>
@@ -841,22 +853,22 @@
         <h2 class="title application__title" id="application">Отправить заявку</h2>
         <div class="request__wrapper">
           <label class="visually-hidden" for="name">Имя</label>
-          <input id="name" class="request__input"  type="text" name="name" placeholder="Имя" data-validate-field="name">
+          <input id="name" class="request__input"  type="text" name="name" placeholder="Имя" required>
         </div>    
         
         <div class="request__wrapper">
           <label class="visually-hidden" for="tel">Телефон</label>
-          <input id="tel" type="tel" name="tel" class="request__input" placeholder="Телефон" data-validate-field="tel">
+          <input id="tel" type="tel" name="tel" class="request__input" placeholder="Телефон" required>
         </div>
         
         <div class="request__wrapper">
           <label class="visually-hidden" for="email">Электронная почта</label>
-          <input id="email" type="email" name="email" class="request__input" placeholder="Электронная почта" data-validate-field="email">
+          <input id="email" type="email" name="email" class="request__input" placeholder="Электронная почта" required>
         </div>
         
         <div class="request__wrapper">
           <label class="visually-hidden" for="comment">Комментарий</label>
-          <textarea id="comment" class="request__textarea"  name="comment" rows="10" placeholder="Комментарий" data-validate-field="comment"></textarea>
+          <textarea id="comment" class="request__textarea" row="1" name="comment" placeholder="Комментарий"></textarea>
         </div>
         
         <label class="request-checkbox__label" for="checkbox">
@@ -867,7 +879,7 @@
         <div class="request-btn__wrapper">
           <span id="success" class="form-success"></span>
           <span id="fail" class="form-fail"></span>
-          <button class="request__btn" type="submit">Отправить</button>          
+          <button class="btn btn__link" type="submit">Отправить</button>          
         </div>
       </form>      
     </div>
@@ -927,12 +939,7 @@
       </button>
     </div>
   </section>
-
   
-
-  <script src="/js/just-validate.min.js"></script>
-  <script src="/js/jquery.inputmask.js"></script>
-  <script src="/js/form.js"></script>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 
   <script>
