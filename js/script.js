@@ -1,12 +1,12 @@
 window.addEventListener('DOMContentLoaded', function() {
   const slideEvent = document.querySelectorAll('.events__item'),
     contentEvent = document.querySelectorAll('.events-content'),
-    closedContent = document.querySelectorAll('.events-content__close');
+    closedContent = document.querySelectorAll('.events-content__close'),
+    btnClosedContent = document.querySelectorAll('.slider-description__closed');
 
   for (let i = 0; i < slideEvent.length; i++) {
     slideEvent[i].addEventListener('click', function(e) {
       const dataSlide = e.currentTarget.attributes['data-slide'].value;
-      console.log(dataSlide);
 
       for (let i = 0; i < contentEvent.length; i++) {
         let dataContent = contentEvent[i].attributes['data-content'].value;
@@ -24,6 +24,13 @@ window.addEventListener('DOMContentLoaded', function() {
       dataContent.classList.remove('is-active');
     });
   };
+
+  for (let i = 0; i < btnClosedContent.length; i++) {
+    btnClosedContent[i].addEventListener('click', function(e) {
+      const dataContent = e.currentTarget.closest('[data-content]:not(article)');
+      dataContent.classList.remove('is-active');
+    });
+  };
   
 
   // footer copyrigth
@@ -37,8 +44,8 @@ window.addEventListener('DOMContentLoaded', function() {
   const popupBurger = document.querySelector('.popup-burger'),
     bntBurger = document.querySelector('.header__burger'),
     btnBurgerClosed = document.querySelector('.popup-burger__closed'),
-    body = document.querySelector('.body'),
-    linkBurger = document.querySelectorAll('.popup-burger__link');
+    body = document.querySelector('.body');
+    
   
   bntBurger.addEventListener('click', function() {
     popupBurger.classList.add('popup-burger--active');
@@ -50,13 +57,14 @@ window.addEventListener('DOMContentLoaded', function() {
     body.style.overflow = 'auto';
   });
 
-  for (let i=0; i<linkBurger.length; i++) {
-    linkBurger.addEventListener('click', function() {
-      console.log('okey')
+
+  popupBurger.addEventListener('click', function(e) {
+    if (e.target.matches('.popup-burger__link')) {
       popupBurger.classList.remove('popup-burger--active');
       body.style.overflow = 'auto';
-    });
-  }
+    }
+  });
+  
 
   // textarea autosize 
   let textarea = document.getElementById('comment');
