@@ -270,3 +270,60 @@ img {
 .header__burger:active:not(:focus-visible) .header__burger-line {
     background-color: var(--color-active);
 }
+
+/* PRODUCTS-1920 */
+.products {
+    margin-bottom: 80px;
+}
+
+.products__title {
+    margin-bottom: 32px;
+}
+
+.products__knife {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.products__card {
+    margin-right: 40px;
+    max-width: 300px;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    background-color: #f0f0f0;
+}
+
+.products__card-content {
+    padding: 30px 20px;
+}
+
+.products__card-title {
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.products__card-descr {
+    margin-bottom: 24px;
+    line-height: 1.5;
+}
+
+.products__card-price {
+    margin-bottom: 24px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.products__card-price__count {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.products__card-btn {
+    margin: 0 auto;
+    display: block;
+    padding: 15px 40px;
+    border: 2px solid #88c639;
+    background-color: transparent;
+    cursor: pointer;
+}
