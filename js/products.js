@@ -2,8 +2,8 @@ window.addEventListener('DOMContentLoaded', function() {
 
     const knife = [
         {id: 1001,
-        name:'Ножи для метания СМН+ с чехлом',
-        descr: 'Сертифицированные ножи ОФСОО "СМН", в комплекте 3 ножа, материал -',
+        name:'Ножи для метания СМН+ с&nbspчехлом',
+        descr: 'Сертифицированные ножи ОФСОО "СМН", в комплекте 3 ножа, изготовлены из высоколегированного коррозионностойкого сплава, относящегося к мартенситному классу',
         price: 6000,
         img: [
             '/img/products/knifes/knife_smn_plus_001.png',
@@ -11,8 +11,8 @@ window.addEventListener('DOMContentLoaded', function() {
             '/img/products/knifes/knife_smn_plus_with_case_003.png'
         ]},
         {id: 1002,
-        name:'Ножи для метания СМН с чехлом',
-        descr: 'Сертифицированные ножи ОФСОО "СМН", в комплекте 3 ножа, материал -',
+        name:'Ножи для метания СМН с&nbspчехлом',
+        descr: 'Сертифицированные ножи ОФСОО "СМН", в комплекте 3 ножа, изготовлены из высоколегированного коррозионностойкого сплава, относящегося к мартенситному классу',
         price: 6000,
         img: [
             '/img/products/knifes/knife_smn_001.png',
@@ -20,16 +20,16 @@ window.addEventListener('DOMContentLoaded', function() {
             '/img/products/knifes/knife_smn_with_case_003.png'
         ]},
         {id: 1003,
-        name:'Ножи для метания СМН+ без чехла',
-        descr: 'Сертифицированные ножи ОФСОО "СМН", в комплекте 3 ножа, материал -',
+        name:'Ножи для метания СМН+ без&nbspчехла',
+        descr: 'Сертифицированные ножи ОФСОО "СМН", в комплекте 3 ножа, изготовлены из высоколегированного коррозионностойкого сплава, относящегося к мартенситному классу',
         price: 5600,
         img: [
             '/img/products/knifes/knife_smn_plus_001.png',
             '/img/products/knifes/knife_smn_plus_002.png'
         ]},
         {id: 1004,
-        name:'Ножи для метания СМН без чехла',
-        descr: 'Сертифицированные ножи ОФСОО "СМН", в комплекте 3 ножа, материал -',
+        name:'Ножи для метания СМН без&nbspчехла',
+        descr: 'Сертифицированные ножи ОФСОО "СМН", в комплекте 3 ножа, изготовлены из высоколегированного коррозионностойкого сплава, относящегося к мартенситному классу',
         price: 5600,
         img: [
             '/img/products/knifes/knife_smn_001.png',
@@ -61,7 +61,24 @@ window.addEventListener('DOMContentLoaded', function() {
         img: [
             '/img/products/bags/case_cifra_001.png',
             '/img/products/bags/case_cifra_002.png'
+        ]},
+        {id: 2004,
+        name:'Чехол &laquo;МУЛЬТИКАМ&raquo; на 3 ножа',
+        descr: 'Усиленные швы, с петлей для ремня, материал - ткань Оксфорд 600 D, максимальная вместимость до 4 ножей',
+        price: 600,
+        img: [
+            '/img/products/bags/case_multicam_001.png',
+            '/img/products/bags/case_multicam_002.png'
+        ]},
+        {id: 2005,
+        name:'Чехол &laquo;ОРАНЖ&raquo; на 3 ножа',
+        descr: 'Усиленные швы, с петлей для ремня, материал - ткань Оксфорд 600 D, максимальная вместимость до 4 ножей',
+        price: 600,
+        img: [
+            '/img/products/bags/case_orange_001.png',
+            '/img/products/bags/case_orange_002.png'
         ]}
+
     ]
 
     const knifeWrapper = document.querySelector('.products__knife');
@@ -102,6 +119,7 @@ window.addEventListener('DOMContentLoaded', function() {
         swiperButtonNext.setAttribute('id', 'swiper-button-next-' + product.id);
         
         card.classList.add('products__card');
+        card.setAttribute('data-product', product.id);
         content.classList.add('products__card-content');
         title.classList.add('products__card-title');
         descr.classList.add('products__card-descr');
@@ -155,4 +173,29 @@ window.addEventListener('DOMContentLoaded', function() {
             }
         });
     };
+
+    const basket = [];
+
+    const productsBtn = document.querySelectorAll('.products__card-btn');
+
+    for (let i=0; i<productsBtn.length; i++) {
+        productsBtn[i].addEventListener('click', function(e){
+            // const productId = e.currentTarget.attributes['data-product'].value;
+            // console.log(productId)
+            productsBtn[i].classList.add('products__card-btn--active');
+            productsBtn[i].innerHTML = 'в корзине';
+            console.log('click')
+        })
+    }
+    
+
+
+
+
+    // footer copyrigth
+    const copyright = document.querySelector('.footer__copyright');
+
+    const yearNow = new Date().getFullYear();
+
+    copyright.innerHTML = '&#169; Все права защищены 2019-' + yearNow;
 });
