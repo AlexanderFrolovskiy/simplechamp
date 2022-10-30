@@ -1,6 +1,6 @@
 window.addEventListener('DOMContentLoaded', function() {
 
-    const knife = [
+    const products = [
         {id: 1001,
         name:'Ножи для метания СМН+ с&nbspчехлом',
         descr: 'Сертифицированные ножи ОФСОО "СМН", в комплекте 3 ножа, изготовлены из высоколегированного коррозионностойкого сплава, относящегося к мартенситному классу',
@@ -34,10 +34,7 @@ window.addEventListener('DOMContentLoaded', function() {
         img: [
             '/img/products/knifes/knife_smn_001.png',
             '/img/products/knifes/knife_smn_002.png'
-        ]}
-    ]
-
-    const bags = [
+        ]},
         {id: 2001,
         name:'Чехол &laquo;ЧЕРНЫЙ&raquo; на 3 ножа',
         descr: 'Усиленные швы, с петлей для ремня, материал - ткань Оксфорд 600 D, максимальная вместимость до 4 ножей',
@@ -81,21 +78,16 @@ window.addEventListener('DOMContentLoaded', function() {
 
     ]
 
+
     const knifeWrapper = document.querySelector('.products__knife');
     const bagsWrapper = document.querySelector('.products__bags');
     
 
-    for (let i=0; i<knife.length; i++) { 
-        loadProduct(knife[i], knifeWrapper); 
-    };   
+    for (let i=0; i<products.length; i++) { 
+        loadProduct(products[i]); 
+    };     
 
-    for (let i=0; i<bags.length; i++) { 
-        loadProduct(bags[i], bagsWrapper); 
-    };   
-    
-    
-
-    function loadProduct(product, wrapper) {
+    function loadProduct(product) {
         const card = document.createElement('article'),
         content = document.createElement('div'),
         title = document.createElement('h3'),
@@ -135,7 +127,14 @@ window.addEventListener('DOMContentLoaded', function() {
         descr.innerHTML = product.descr;
         priceCount.innerHTML = product.price + ' руб';
 
-        wrapper.append(card);
+        let categorySymbol = String(product.id)[0];
+
+        if (categorySymbol == '1') {
+            knifeWrapper.append(card);
+        } else if (categorySymbol == '2') {
+            bagsWrapper.append(card);
+        };
+        
         card.append(swiper);
         swiper.append(swiperWrapper);
         
@@ -176,19 +175,46 @@ window.addEventListener('DOMContentLoaded', function() {
 
     const basket = [];
 
-    const productsBtn = document.querySelectorAll('.products__card-btn');
+    const productCard = document.querySelectorAll('.products__card');    
 
-    for (let i=0; i<productsBtn.length; i++) {
-        productsBtn[i].addEventListener('click', function(e){
-            // const productId = e.currentTarget.attributes['data-product'].value;
-            // console.log(productId)
-            productsBtn[i].classList.add('products__card-btn--active');
-            productsBtn[i].innerHTML = 'в корзине';
-            console.log('click')
-        })
-    }
     
+    function AddingProduct() {
+        const basketIcon = document.querySelector('.header__link-basket');
+        let n = basket.length;
+        basketIcon.setAttribute('data-count', n);
+    }
 
+    AddingProduct();
+
+
+    for (let i=0; i<productCard.length; i++) {
+        productCard[i].addEventListener('click', function(e){
+            const productId = e.currentTarget.attributes['data-product'].value;
+            
+            if (productCard[i].children[1].children[3].classList.contains('products__card-btn--active')) {
+                productCard[i].children[1].children[3].classList.remove('products__card-btn--active');
+                productCard[i].children[1].children[3].innerHTML = 'в корзину';
+
+                for (let p=0; p<basket.length; p++) {
+                    if (basket[p].id == productId) {
+                        basket.splice(p,1);
+                        break;
+                    };
+                };
+            } else {
+                productCard[i].children[1].children[3].classList.add('products__card-btn--active');
+                productCard[i].children[1].children[3].innerHTML = 'в корзине';
+
+                for (let p=0; p<products.length; p++) {
+                    if (products[p].id == productId) {
+                        basket.push(products[p]);
+                        break;
+                    };
+                };
+            };                 
+        });   
+        
+    };
 
 
 

@@ -200,7 +200,7 @@ img {
     margin-right: 10px;
 }
 
-.header__link {
+.header__link {    
     font-size: var(--font-main);
     color: var(--color-secondary);
     cursor: pointer;
@@ -209,7 +209,31 @@ img {
     transition-timing-function: ease-in-out;
 }
 
-.header__link-basket path {
+.header__link-basket {
+    position: relative;
+}
+
+.header__link-basket::after {
+    content: attr(data-count);
+    position: absolute;
+    top: 0;
+    right: -10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 16px;
+    height: 16px;
+    font-size: 12px;
+    color: #fff;
+    border-radius: 100px;
+    background-color: #88c639;
+}
+
+.header__link-basket__icon {
+    vertical-align: top;
+}
+
+.header__link-basket__icon path {
     stroke: #fff;
     transition-property: stroke;
     transition-duration: .3s;
@@ -229,16 +253,16 @@ img {
     color: var(--color-active);
 }
 
-.header__link:focus-visible .header__link-basket path {
+.header__link:focus-visible .header__link-basket__icon path {
     outline: none;   
     stroke: var(--color-detailed);
 }
 
-.header__link:hover:not(:focus-visible) .header__link-basket path {    
+.header__link:hover:not(:focus-visible) .header__link-basket__icon path {    
     stroke: var(--color-detailed);
 }
 
-.header__link:active:not(:focus-visible) .header__link-basket path {    
+.header__link:active:not(:focus-visible) .header__link-basket__icon path {    
     stroke: var(--color-active);
 }
 
