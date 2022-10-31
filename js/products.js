@@ -179,9 +179,15 @@ window.addEventListener('DOMContentLoaded', function() {
 
     
     function AddingProduct() {
-        const basketIcon = document.querySelector('.header__link-basket');
+        const basketIcon = document.querySelector('.header__link-basket--circle');
         let n = basket.length;
-        basketIcon.setAttribute('data-count', n);
+        basketIcon.innerHTML = n;
+
+        if (n > 0) {
+            basketIcon.classList.add('header__link-basket--active');
+        } else {
+            basketIcon.classList.remove('header__link-basket--active');
+        }
     }
 
     AddingProduct();
@@ -201,6 +207,8 @@ window.addEventListener('DOMContentLoaded', function() {
                         break;
                     };
                 };
+
+                AddingProduct();
             } else {
                 productCard[i].children[1].children[3].classList.add('products__card-btn--active');
                 productCard[i].children[1].children[3].innerHTML = 'в корзине';
@@ -211,6 +219,8 @@ window.addEventListener('DOMContentLoaded', function() {
                         break;
                     };
                 };
+
+                AddingProduct();
             };                 
         });   
         
