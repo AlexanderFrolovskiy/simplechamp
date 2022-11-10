@@ -76,18 +76,26 @@ window.addEventListener('DOMContentLoaded', function() {
             '/img/products/bags/case_orange_002.png'
         ]}
 
-    ]
+    ];
 
+    function loadBasket() {
+        let basket = [];
+        const basketRaw = localStorage.getItem('basket');
+        if (basketRaw) {
+            basket = JSON.parse(basketRaw);
+        };
+
+        return basket;
+    };
+
+    function saveBasket(arr) {
+        localStorage.setItem('basket', JSON.stringify(arr));
+    };
 
     const knifeWrapper = document.querySelector('.products__knife');
     const bagsWrapper = document.querySelector('.products__bags');
-    
 
-    for (let i=0; i<products.length; i++) { 
-        loadProduct(products[i]); 
-    };     
-
-    function loadProduct(product) {
+    function loadProduct(product, basket) {
         const card = document.createElement('article'),
         content = document.createElement('div'),
         title = document.createElement('h3'),
@@ -119,10 +127,16 @@ window.addEventListener('DOMContentLoaded', function() {
         priceText.classList.add('products__card-price__descr');
         priceText.innerHTML = 'цена:';
         priceCount.classList.add('products__card-price__count');
+
         button.classList.add('products__card-btn');
+        button.setAttribute('data-product-btn', product.id);
         button.innerHTML = 'в корзину';
 
-        
+        if (basket.indexOf(product.id) >= 0) {
+            button.classList.add('products__card-btn--active');
+            button.innerHTML = 'в корзине';
+        }
+
         title.innerHTML = product.name;
         descr.innerHTML = product.descr;
         priceCount.innerHTML = product.price + ' руб';
@@ -173,13 +187,17 @@ window.addEventListener('DOMContentLoaded', function() {
         });
     };
 
-    const basket = [];
+    const basket = loadBasket();
 
-    const productCard = document.querySelectorAll('.products__card');    
+    for (let i=0; i<products.length; i++) {
+        loadProduct(products[i], basket);
+    };
 
-    
-    function AddingProduct() {
+    const buttonCard = document.querySelectorAll('.products__card-btn');    
+
+    function drawCounter(basket) {
         const basketIcon = document.querySelector('.header__link-basket--circle');
+
         let n = basket.length;
         basketIcon.innerHTML = n;
 
@@ -187,45 +205,44 @@ window.addEventListener('DOMContentLoaded', function() {
             basketIcon.classList.add('header__link-basket--active');
         } else {
             basketIcon.classList.remove('header__link-basket--active');
-        }
-    }
-
-    AddingProduct();
-
-
-    for (let i=0; i<productCard.length; i++) {
-        productCard[i].addEventListener('click', function(e){
-            const productId = e.currentTarget.attributes['data-product'].value;
-            
-            if (productCard[i].children[1].children[3].classList.contains('products__card-btn--active')) {
-                productCard[i].children[1].children[3].classList.remove('products__card-btn--active');
-                productCard[i].children[1].children[3].innerHTML = 'в корзину';
-
-                for (let p=0; p<basket.length; p++) {
-                    if (basket[p].id == productId) {
-                        basket.splice(p,1);
-                        break;
-                    };
-                };
-
-                AddingProduct();
-            } else {
-                productCard[i].children[1].children[3].classList.add('products__card-btn--active');
-                productCard[i].children[1].children[3].innerHTML = 'в корзине';
-
-                for (let p=0; p<products.length; p++) {
-                    if (products[p].id == productId) {
-                        basket.push(products[p]);
-                        break;
-                    };
-                };
-
-                AddingProduct();
-            };                 
-        });   
-        
+        };
     };
 
+    drawCounter(basket);
+
+    for (let i=0; i<buttonCard.length; i++) {
+        buttonCard[i].addEventListener('click', function(e) {
+
+            const productId = e.currentTarget.attributes['data-product-btn'].value;
+            
+            if (buttonCard[i].classList.contains('products__card-btn--active')) {
+                buttonCard[i].classList.remove('products__card-btn--active');
+                buttonCard[i].innerHTML = 'в корзину';                
+
+                const idx = basket.indexOf(Number(productId));
+                if (idx >= 0) {
+                    basket.splice(idx, 1);
+                };
+                
+                saveBasket(basket);
+
+                drawCounter(basket);
+            } else {
+                buttonCard[i].classList.add('products__card-btn--active');
+                buttonCard[i].innerHTML = 'в корзине';
+
+                const idx = basket.indexOf(Number(productId));
+                if (idx < 0) {
+                    basket.push(Number(productId));
+                }                
+
+                saveBasket(basket);                      
+                    
+                drawCounter(basket);
+            };            
+        });   
+        
+    };   
 
 
     // footer copyrigth
