@@ -24,6 +24,29 @@
     }
 }
 
+@media (max-width: 992px) {
+    .container {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .products__wrapper {
+        width: calc(100% / 2);
+    }
+}
+
+@media (max-width: 680px) {
+    .products__wrapper {
+        padding-left: 0;
+        padding-right: 0;
+        width: 100%;
+    }
+
+    .footer__container {
+        padding-top: 78px;
+    }
+}
+
+
 @media (max-width: 568px) {
     .container {
         padding-left: 24px;
