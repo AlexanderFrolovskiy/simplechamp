@@ -96,7 +96,8 @@ window.addEventListener('DOMContentLoaded', function() {
     const bagsWrapper = document.querySelector('.products__bags');
 
     function loadProduct(product, basket) {
-        const card = document.createElement('article'),
+        const cardWrapper = document.createElement('article'),
+        card = document.createElement('div'),
         content = document.createElement('div'),
         title = document.createElement('h3'),
         descr = document.createElement('p'),
@@ -118,6 +119,7 @@ window.addEventListener('DOMContentLoaded', function() {
         swiperButtonNext.classList.add('swiper-button-next');
         swiperButtonNext.setAttribute('id', 'swiper-button-next-' + product.id);
         
+        cardWrapper.classList.add('products__wrapper');
         card.classList.add('products__card');
         card.setAttribute('data-product', product.id);
         content.classList.add('products__card-content');
@@ -144,11 +146,12 @@ window.addEventListener('DOMContentLoaded', function() {
         let categorySymbol = String(product.id)[0];
 
         if (categorySymbol == '1') {
-            knifeWrapper.append(card);
+            knifeWrapper.append(cardWrapper);
         } else if (categorySymbol == '2') {
-            bagsWrapper.append(card);
+            bagsWrapper.append(cardWrapper);
         };
         
+        cardWrapper.append(card);
         card.append(swiper);
         swiper.append(swiperWrapper);
         
