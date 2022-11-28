@@ -31,19 +31,36 @@ function tableRow(basket, products, n) {
     tdNameImg = document.createElement('img'),
     tdNameText = document.createElement('span'),
     tdCount = document.createElement('td'),
+    tdCountWrap = document.createElement('div'),
+    tdCountMinus = document.createElement('button'),
+    tdCountValue = document.createElement('input'),
+    tdCountPlus = document.createElement('button'),
     tdPrice = document.createElement('td'),
     tdTotal = document.createElement('td');
 
     let product = products.find(item => item.id == basket);
     
     tdNumber.innerHTML = n;
+    tdNumber.setAttribute('data-label', '№');
     tdName.classList.add('basket__tbody-name');
+    tdName.setAttribute('data-label', 'Товар');
     tdNameImg.classList.add('basket__tbody-name__img')
     tdNameImg.setAttribute('src', product.img[0]);
     tdNameText.innerHTML = product.name;
-    tdCount.innerHTML = 1;
-    tdPrice.innerHTML = product.price;
-    tdTotal.innerHTML = tdCount.innerHTML * product.price;
+    tdCount.setAttribute('data-label', 'Кол-во');
+    tdCountWrap.classList.add('basket__tbody-count');
+    tdCountMinus.classList.add('basket__tbody-count__minus');
+    tdCountValue.classList.add('basket__tbody-count__value');
+    tdCountValue.setAttribute('type', 'number');
+    tdCountValue.setAttribute('autocomplete', 'off');
+    tdCountValue.setAttribute('maxlength', '2');
+    tdCountValue.setAttribute('min', '1');
+    tdCountValue.value = 1;
+    tdCountPlus.classList.add('basket__tbody-count__plus');
+    tdPrice.innerHTML = product.price + ' \u20bd';
+    tdPrice.setAttribute('data-label', 'Цена за единицу');
+    tdTotal.innerHTML = tdCountValue.value * product.price;
+    tdTotal.setAttribute('data-label', 'Общая стоимость');
 
     basketTableRow.append(tr);
     tr.append(tdNumber);
@@ -51,6 +68,10 @@ function tableRow(basket, products, n) {
     tdName.append(tdNameImg);
     tdName.append(tdNameText);
     tr.append(tdCount);
+    tdCount.append(tdCountWrap);
+    tdCountWrap.append(tdCountMinus);
+    tdCountWrap.append(tdCountValue);
+    tdCountWrap.append(tdCountPlus);
     tr.append(tdPrice);
     tr.append(tdTotal);
 
