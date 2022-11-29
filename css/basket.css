@@ -69,6 +69,10 @@
     border: 1px solid #ccc;
     border-radius: 100px;
     background-color: transparent;
+    cursor: pointer;
+    transition-property: border-color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
 }
 
 .basket__tbody-count__minus:before {
@@ -80,6 +84,18 @@
     width: 15px;
     height: 1px;
     background-color: #ccc;
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.basket__tbody-count__minus:hover {
+    border-color: #333;
+}
+
+.basket__tbody-count__minus:hover::before,
+.basket__tbody-count__minus:hover::after {
+    background-color: #333;
 }
 
 .basket__tbody-count__value {
@@ -92,9 +108,8 @@
 
 .basket__tbody-count__value::-webkit-outer-spin-button,
 .basket__tbody-count__value::-webkit-inner-spin-button {
-    /* display: none; <- Crashes Chrome on hover */
     -webkit-appearance: none;
-    margin: 0; /* <-- Apparently some margin are still there even though it's hidden */
+    margin: 0;
 }
 
 .basket__tbody-count__plus {
@@ -104,6 +119,10 @@
     border: 1px solid #ccc;
     border-radius: 100px;
     background-color: transparent;
+    cursor: pointer;
+    transition-property: border-color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
 }
 
 .basket__tbody-count__plus:before {
@@ -115,6 +134,9 @@
     width: 15px;
     height: 1px;
     background-color: #ccc;
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
 }
 
 .basket__tbody-count__plus:after {
@@ -126,6 +148,18 @@
     width: 1px;
     height: 15px;
     background-color: #ccc;
+    transition-property: background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.basket__tbody-count__plus:hover {
+    border-color: #333;
+}
+
+.basket__tbody-count__plus:hover::before,
+.basket__tbody-count__plus:hover::after {
+    background-color: #333;
 }
 
 .basket__table tfoot {

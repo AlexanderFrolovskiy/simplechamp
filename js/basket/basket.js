@@ -2,6 +2,7 @@ import { products } from '../products.js';
 // import { loadBasket, saveBasket } from '../market/market-api.js'; 
 
 import { loadBasket } from '../market/market-api.js'; 
+// import { countPlus } from './basket-api.js';
 
 const basket = loadBasket();
 
@@ -75,7 +76,46 @@ function tableRow(basket, products, n) {
     tr.append(tdPrice);
     tr.append(tdTotal);
 
-    basketSum.innerHTML = Number(basketSum.innerHTML)+Number(tdTotal.innerHTML);
+    basketSum.innerHTML = Number(basketSum.innerHTML) + Number(tdTotal.innerHTML);
+}
+
+/* change count product in table row */
+const countProduct = document.querySelectorAll('.basket__tbody-count__value');
+const countPlus = document.querySelectorAll('.basket__tbody-count__plus');
+const countMinus = document.querySelectorAll('.basket__tbody-count__minus');
+
+for (let i = 0; i < countProduct.length; i++) {
+    if (countProduct[i].value <= 1) {
+        countMinus[i].disabled = 'disabled';
+    }
+}
+
+for (let i = 0; i < countPlus.length; i++) {
+    countPlus[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        const el = e.target; 
+        const parent = el.closest('.basket__tbody-count');
+        const childCount = parent.querySelector('.basket__tbody-count__value');
+        childCount.value = Number(childCount.value) + 1;
+
+        const childMinus = parent.querySelector('.basket__tbody-count__minus');
+        childMinus.disabled = false;
+    })
+}
+
+for (let i = 0; i < countMinus.length; i++) {
+    countMinus[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        const el = e.target; 
+        const parent = el.closest('.basket__tbody-count');
+        const child = parent.querySelector('.basket__tbody-count__value');
+        child.value = Number(child.value) - 1;
+
+        if (child.value <= 1) {
+            const childMinus = parent.querySelector('.basket__tbody-count__minus');
+            childMinus.disabled = 'disabled';
+        }
+    })
 }
 
 
