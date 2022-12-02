@@ -12,13 +12,12 @@
 
     <!-- CSS -->
     <link rel="stylesheet" href="css/normalize.css">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/swiper-bundle.min.css">
+    <link rel="stylesheet" href="css/general.css">
     <link rel="stylesheet" href="css/market.css">
-    <link rel="stylesheet" href="css/market-media.css">
     <!-- JS -->
-    <script src="https://unpkg.com/swiper/swiper-bundle.min.js" defer></script>
-    <script src="/js/products.js" defer></script>
-    <!-- <script src="/js/swiper.js" defer></script> -->
+    <script src="/js/swiper-bundle.min.js" defer></script>
+    <script type="module" src="/js/market/market.js"></script>
 
     <!-- Yandex.Metrika counter -->
     <script type="text/javascript">
@@ -86,14 +85,11 @@
 	<section class="products">
 		<div class="container products__container">
             <h2 class="products__title">Ножи для метания</h2>
-            <div class="products__item products__knife">
-
-            </div>
+            <div class="products__item products__knife"></div>
             <h2 class="products__title">Чехлы для ножей</h2>
-            <div class="products__item products__bags">
-
-            </div>
-            
+            <div class="products__item products__bags"></div>
+            <h2 class="products__title">Аксессуары</h2>
+            <div class="products__item products__accessory"></div>            
         </div>
 	</section>
 
@@ -105,21 +101,47 @@
                 <h3 class="visually-hidden">Реквизиты организации</h3>
               </li>
               <li class="footer-requisites__item">ООО &laquo;ЦСП &laquo;ЧЕМПИОН&raquo;</li>
-              <li class="footer-requisites__item">г. Москва, Дмитровское ш., д. 157, стр. 9</li>
+              <li class="footer-requisites__item">г. Москва, Карельский бульвар, д. 8, к. 2</li>
               <li class="footer-requisites__item">ИНН 7724489438</li>
               <li class="footer-requisites__item">КПП 772401001</li>
             </ul>
+            <div class="footer__documents">
+              <a class="footer__documents-item" href="#">Условия доставки</a>
+              <a class="footer__documents-item" href="#">Способ оплаты товара</a>
+              <a class="footer__documents-item" href="#">Политика конфиденциальности</a>
+            </div>
+            <div class="footer__contacts">
+              <a class="footer__contacts-item" href="tel:+79150040349">+7 915 004 03 49</a>
+              <a class="footer__contacts-item" href="mailto:info@simplechamp.ru">info@simplechamp.ru</a>
+            </div>
           </div>
-          <div class="footer-requisites__secondary">
-            <span class="footer__copyright"></span>
-            <a class="link footer__link" href="#header">
-              <svg  width="60" height="60" viewBox="0 0 130 130"  xmlns="http://www.w3.org/2000/svg">
-                <path d="M65 0C29.0996 0 0 29.0996 0 65C0 100.9 29.0996 130 65 130C100.9 130 130 100.896 130 65C130 29.1039 100.9 0 65 0ZM99.6775 83.4275C98.089 85.016 95.5175 85.016 93.9331 83.4275L65 54.4944L36.071 83.4232C34.4825 85.0119 31.911 85.0119 30.3265 83.4232C28.7381 81.8348 28.7381 79.2633 30.3265 77.679L61.4331 46.5725C62.4081 45.5975 63.7406 45.2969 65.0042 45.5161C66.2637 45.2927 67.6002 45.5975 68.5752 46.5725L99.6817 77.679C101.262 79.2675 101.262 81.839 99.6775 83.4275Z" />
-              </svg>
-            </a>
-          </div>
+          <p class="footer__copyright"></p>
         </div>
     </footer>
+
+    <section class="popup-burger">
+      <div class="container popup-burger__container">
+        <nav class="popup-burger__nav">
+          <ul class="popup-burger__list">
+            <li class="popup-burger__item">
+              <a class="popup-burger__link" href="tel:+79150040349">+7 915 004 03 49</a>
+            </li>
+            <li class="popup-burger__item">
+              <a class="popup-burger__link" href="mailto:info@simplechamp.ru">info@simplechamp.ru</a>
+            </li>
+            <li class="popup-burger__item">
+              <a class="popup-burger__link" href="index.html">Спортивное агентство</a>
+            </li>
+          </ul>
+        </nav>
+        <button class="popup-burger__closed">
+          <span class="popup-burger__line"></span>
+          <span class="popup-burger__line"></span>
+        </button>
+      </div>
+    </section>
+
+    <div class="btn-up btn-up_hide"></div>
     
 </body>
 </html>
