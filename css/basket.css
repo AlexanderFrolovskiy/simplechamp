@@ -19,6 +19,7 @@
 }
 
 .basket__table {
+    margin-bottom: 40px;
     width: 100%;    
     border-collapse: collapse;
     border: 1px solid #ccc;
@@ -90,12 +91,21 @@
 }
 
 .basket__tbody-count__minus:hover {
-    border-color: #333;
+    border-color: #6b9b2e;
 }
 
 .basket__tbody-count__minus:hover::before,
 .basket__tbody-count__minus:hover::after {
-    background-color: #333;
+    background-color: #6b9b2e;
+}
+
+.basket__tbody-count__minus:disabled {
+    border: 1px solid #ccc;
+    cursor: auto;
+}
+
+.basket__tbody-count__minus:disabled:before {
+    background-color: #ccc;
 }
 
 .basket__tbody-count__value {
@@ -154,12 +164,22 @@
 }
 
 .basket__tbody-count__plus:hover {
-    border-color: #333;
+    border-color: #6b9b2e;
 }
 
 .basket__tbody-count__plus:hover::before,
 .basket__tbody-count__plus:hover::after {
-    background-color: #333;
+    background-color: #6b9b2e;
+}
+
+.basket__tbody-count__plus:disabled {
+    border: 1px solid #ccc;
+    cursor: auto;
+}
+
+.basket__tbody-count__plus:disabled:before,
+.basket__tbody-count__plus:disabled:after {
+    background-color: #ccc;
 }
 
 .basket__table tfoot {
@@ -170,6 +190,47 @@
     padding-right: 20px;
     text-align: end;
     text-transform: uppercase;
+}
+
+/* FORM */
+.basket__form-title {
+    margin-bottom: 24px;
+}
+
+.basket__form-input {
+    border-radius: 0;
+}
+
+.basket__form-btn {
+    margin: 0 auto;
+    padding: 15px 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    max-width: 300px;
+    border: 2px solid #88c639;
+    font-size: var(--font-descr);
+    font-weight: 400;
+    background-color: transparent;
+    cursor: pointer;
+    transition-property: background-color, border-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.basket__form-btn:focus-visible {
+    outline: none;
+    border: 2px solid #6b9b2e;
+}
+
+.basket__form-btn:hover:not(:focus-visible) {
+    border: 2px solid #6b9b2e;
+}
+
+.basket__form-btn:active:not(:focus-visible) {
+    background-color: #88c639;
+    border: 2px solid #6b9b2e;
 }
 
 /* FOOTER */
