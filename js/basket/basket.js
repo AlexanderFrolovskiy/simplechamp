@@ -2,7 +2,7 @@ import { products } from '../products.js';
 // import { loadBasket, saveBasket } from '../market/market-api.js'; 
 
 import { loadBasket } from '../market/market-api.js'; 
-// import { countPlus } from './basket-api.js';
+import { createOrder } from './basket-api.js';
 
 const basket = loadBasket();
 
@@ -117,6 +117,41 @@ for (let i = 0; i < countMinus.length; i++) {
         }
     })
 }
+
+
+// send new order 
+const form = document.getElementById('basket-form');
+const formError = document.getElementById('basket__form-error');
+
+form.addEventListener('submit', e => {
+    e.preventDefault();
+    const data = {};
+    const inputs = {};
+
+    for (let i = 0; i < form.elements.length; i++) {
+        const input = form.elements[i];
+
+        if (!input.name) continue;
+        data[input.name] = input.value;
+        inputs[input.name] = input;
+        input.classList.remove('is-invalid');
+    }
+
+    try {
+        createOrder(data);
+    } catch (err) {
+        if (err.name !== 'TypeError') throw err;
+        if (err.errorMessages) {
+            for (const errorMessage of err.errorMessages) {
+                inputs[errorMessage.name].classList.add('is-invalid');
+            }
+            formError.textContent = err.errorMessages
+                .map(errorMessage => errorMessage.message)
+                .join('. ')
+        }
+    }
+    
+});
 
 
 // footer copyrigth
