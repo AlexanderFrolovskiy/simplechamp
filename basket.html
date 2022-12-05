@@ -84,7 +84,7 @@
 				<input class="form-control mb-3 basket__form-input" name="surname" type="text" placeholder="Фамилия">
 				<input class="form-control mb-3 basket__form-input" name="name" type="text" placeholder="Имя">
 				<input class="form-control mb-3 basket__form-input" name="email" type="email" placeholder="E-mail">
-				<input class="form-control mb-3 basket__form-input" name="tel" type="tel" placeholder="Телефон">
+				<input class="form-control mb-3 basket__form-input basket__form-input__tel" name="tel" type="tel" placeholder="Телефон">
 				<input class="form-control mb-3 basket__form-input" name="address" type="text" placeholder="Адрес (город, улица, дом)">
 				<div class="text-danger mb-2" id="basket__form-error"></div>
 				<button class="basket__form-btn">Отправить заявку</button>
@@ -100,7 +100,7 @@
 							<h3 class="visually-hidden">Реквизиты организации</h3>
 						</li>
 						<li class="footer-requisites__item">ООО &laquo;ЦСП &laquo;ЧЕМПИОН&raquo;</li>
-						<li class="footer-requisites__item">г. Москва, Карельский бульвар, д. 8, к. 2</li>
+						<li class="footer-requisites__item">г. Москва, Тамбовская улица, д. 8, к. 1</li>
 						<li class="footer-requisites__item">ИНН 7724489438</li>
 						<li class="footer-requisites__item">КПП 772401001</li>
 					</ul>
@@ -118,5 +118,28 @@
 			</div>
 	</footer>
     
+	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+	<script src="/js/maska-nomera.js" type="text/javascript"></script>
+
+	<script>
+		$('.basket__form-input__tel').mask('+7 (999) 999-99-99');
+
+		$.fn.setCursorPosition = function(pos) {
+			if ($(this).get(0).setSelectionRange) {
+				$(this).get(0).setSelectionRange(pos, pos);
+			} else if ($(this).get(0).createTextRange) {
+				var range = $(this).get(0).createTextRange();
+				range.collapse(true);
+				range.moveEnd('character', pos);
+				range.moveStart('character', pos);
+				range.select();
+			}
+		};
+
+
+		$('input[type="tel"]').click(function(){
+			$(this).setCursorPosition(4);
+		});
+	</script>
 </body>
 </html>

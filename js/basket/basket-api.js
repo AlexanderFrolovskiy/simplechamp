@@ -31,11 +31,6 @@ export function createOrder(data) {
             name: 'tel',
             message: 'Телефон обязателен для заполнения'
     })
-    else if (!data.tel.length == 12 || !data.tel.includes('+') || !data.tel.includes('/^[0-9]+$/'))
-        errors.push({
-            name: 'tel',
-            message: 'Телефон должен быть записан в формате +79998887766'
-        })
 
     if (!data.address.trim())
         errors.push({
