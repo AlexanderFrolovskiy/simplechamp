@@ -44,9 +44,13 @@ function loadProduct(product, basket) {
     button.setAttribute('data-product-btn', product.id);
     button.innerHTML = 'в корзину';
 
-    if (basket.indexOf(product.id) >= 0) {
-        button.classList.add('products__card-btn--active');
-        button.innerHTML = 'в корзине';
+    console.log(basket)
+    for (let i = 0; i <= basket.length; i++) {
+        console.log(basket[i].id)
+        if (basket[i].id == product.id) {
+                button.classList.add('products__card-btn--active');
+                button.innerHTML = 'в корзине';
+        }
     }
 
     title.innerHTML = product.name;
@@ -135,6 +139,8 @@ for (let i=0; i<buttonCard.length; i++) {
             buttonCard[i].innerHTML = 'в корзину';                
 
             const idx = basket.indexOf(Number(productId));
+            console.log(basket)
+            // const basketItem = basket.item.id;
             if (idx >= 0) {
                 basket.splice(idx, 1);
             };
@@ -148,7 +154,11 @@ for (let i=0; i<buttonCard.length; i++) {
 
             const idx = basket.indexOf(Number(productId));
             if (idx < 0) {
-                basket.push(Number(productId));
+                const item = {
+                    id: Number(productId),
+                    count: 1
+                }
+                basket.push(item);
             }                
 
             saveBasket(basket);                      

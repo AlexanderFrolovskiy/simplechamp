@@ -58,6 +58,7 @@
 }
 
 .basket__tbody-count {
+    margin-bottom: 5px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -182,6 +183,29 @@
     background-color: #ccc;
 }
 
+.basket__tbody-btn--remove {
+    border: none;
+    color: #ccc;
+    background-color: transparent;
+    cursor: pointer;
+    transition-property: color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.basket__tbody-btn--remove:focus-visible {
+    outline: none;
+    color: #333;
+}
+
+.basket__tbody-btn--remove:hover:not(:focus-visible) {
+    color: #333;
+}
+
+.basket__tbody-btn--remove:active:not(:focus-visible) {
+    color: #333;
+}
+
 .basket__table tfoot {
     font-weight: 700;
 }
@@ -198,7 +222,13 @@
 }
 
 .basket__form-title {
-    margin-bottom: 24px;
+    margin-bottom: 16px;
+}
+
+.basket__form-descr {
+    margin-bottom: 16px;
+    display: block;
+    font-size: var(--font-secondary);
 }
 
 .basket__form-input {
@@ -323,7 +353,7 @@
 
     /* BASKET */
     .basket__table {
-        font-size: 14px;
+        font-size: 12px;
     }
 }
 
@@ -357,7 +387,6 @@
     .basket__table td {
         display: block;
         text-align: right;
-        font-size: 13px;
         border-bottom: 1px solid #ccc;
         border-right: 1px solid transparent;
     }

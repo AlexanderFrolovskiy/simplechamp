@@ -36,6 +36,7 @@ function tableRow(basket, products, n) {
     tdCountMinus = document.createElement('button'),
     tdCountValue = document.createElement('input'),
     tdCountPlus = document.createElement('button'),
+    tdRemove = document.createElement('button'),
     tdPrice = document.createElement('td'),
     tdTotal = document.createElement('td');
 
@@ -58,7 +59,9 @@ function tableRow(basket, products, n) {
     tdCountValue.setAttribute('min', '1');
     tdCountValue.value = 1;
     tdCountPlus.classList.add('basket__tbody-count__plus');
-    tdPrice.innerHTML = product.price + ' \u20bd';
+    tdRemove.classList.add('basket__tbody-btn--remove');
+    tdRemove.textContent = 'Удалить';
+    tdPrice.innerHTML = product.price;
     tdPrice.setAttribute('data-label', 'Цена за единицу');
     tdTotal.innerHTML = tdCountValue.value * product.price;
     tdTotal.setAttribute('data-label', 'Общая стоимость');
@@ -73,6 +76,7 @@ function tableRow(basket, products, n) {
     tdCountWrap.append(tdCountMinus);
     tdCountWrap.append(tdCountValue);
     tdCountWrap.append(tdCountPlus);
+    tdCount.append(tdRemove);
     tr.append(tdPrice);
     tr.append(tdTotal);
 
