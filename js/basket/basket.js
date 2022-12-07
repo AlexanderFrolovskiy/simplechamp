@@ -6,8 +6,6 @@ import { createOrder } from './basket-api.js';
 
 const basket = loadBasket();
 
-console.log(basket);
-
 const basketNull = document.querySelector('.basket__null');
 const basketTable = document.querySelector('.basket__table');
 const basketTableRow = document.querySelector('.basket__tbody');
@@ -40,7 +38,7 @@ function tableRow(basket, products, n) {
     tdPrice = document.createElement('td'),
     tdTotal = document.createElement('td');
 
-    let product = products.find(item => item.id == basket);
+    let product = products.find(item => item.id == basket.id);
     
     tdNumber.innerHTML = n;
     tdNumber.setAttribute('data-label', '№');
@@ -57,13 +55,13 @@ function tableRow(basket, products, n) {
     tdCountValue.setAttribute('autocomplete', 'off');
     tdCountValue.setAttribute('maxlength', '2');
     tdCountValue.setAttribute('min', '1');
-    tdCountValue.value = 1;
+    tdCountValue.value = basket.count;
     tdCountPlus.classList.add('basket__tbody-count__plus');
     tdRemove.classList.add('basket__tbody-btn--remove');
     tdRemove.textContent = 'Удалить';
     tdPrice.innerHTML = product.price;
     tdPrice.setAttribute('data-label', 'Цена за единицу');
-    tdTotal.innerHTML = tdCountValue.value * product.price;
+    tdTotal.innerHTML = basket.count * product.price;
     tdTotal.setAttribute('data-label', 'Общая стоимость');
 
     basketTableRow.append(tr);

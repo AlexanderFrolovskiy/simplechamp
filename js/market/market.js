@@ -43,14 +43,10 @@ function loadProduct(product, basket) {
     button.classList.add('products__card-btn');
     button.setAttribute('data-product-btn', product.id);
     button.innerHTML = 'в корзину';
-
-    console.log(basket)
-    for (let i = 0; i <= basket.length; i++) {
-        console.log(basket[i].id)
-        if (basket[i].id == product.id) {
-                button.classList.add('products__card-btn--active');
-                button.innerHTML = 'в корзине';
-        }
+   
+    if (basket.find(item => item.id === product.id)) {
+        button.classList.add('products__card-btn--active');
+        button.innerHTML = 'в корзине';
     }
 
     title.innerHTML = product.name;
@@ -138,12 +134,9 @@ for (let i=0; i<buttonCard.length; i++) {
             buttonCard[i].classList.remove('products__card-btn--active');
             buttonCard[i].innerHTML = 'в корзину';                
 
-            const idx = basket.indexOf(Number(productId));
-            console.log(basket)
-            // const basketItem = basket.item.id;
-            if (idx >= 0) {
-                basket.splice(idx, 1);
-            };
+            const idx = basket.indexOf(basket.find(item => item.id === Number(productId)));
+
+            basket.splice(idx, 1);            
             
             saveBasket(basket);
 
@@ -151,15 +144,13 @@ for (let i=0; i<buttonCard.length; i++) {
         } else {
             buttonCard[i].classList.add('products__card-btn--active');
             buttonCard[i].innerHTML = 'в корзине';
-
-            const idx = basket.indexOf(Number(productId));
-            if (idx < 0) {
-                const item = {
-                    id: Number(productId),
-                    count: 1
-                }
-                basket.push(item);
-            }                
+        
+            const item = {
+                id: Number(productId),
+                count: 1
+            }
+            
+            basket.push(item);      
 
             saveBasket(basket);                      
                 
