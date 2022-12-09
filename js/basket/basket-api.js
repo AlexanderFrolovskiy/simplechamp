@@ -1,5 +1,3 @@
-
-
 export function createOrder(data) {
     const errors = [];
 

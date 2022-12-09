@@ -134,31 +134,30 @@ for (let i=0; i<buttonCard.length; i++) {
             buttonCard[i].classList.remove('products__card-btn--active');
             buttonCard[i].innerHTML = 'в корзину';                
 
-            const idx = basket.indexOf(basket.find(item => item.id === Number(productId)));
+            const idx = basket.findIndex(item => item.id === Number(productId));
 
-            basket.splice(idx, 1);            
+            if (idx >= 0) {
+                basket.splice(idx, 1);
+            }
             
-            saveBasket(basket);
-
-            drawCounter(basket);
         } else {
             buttonCard[i].classList.add('products__card-btn--active');
             buttonCard[i].innerHTML = 'в корзине';
         
-            const item = {
-                id: Number(productId),
-                count: 1
+            if (basket.findIndex(item => item.id === Number(productId)) < 0) {
+                const item = {
+                    id: Number(productId),
+                    count: 1
+                };
+                basket.push(item);      
             }
-            
-            basket.push(item);      
+        }
+        
+        saveBasket(basket);
 
-            saveBasket(basket);                      
-                
-            drawCounter(basket);
-        };            
-    });   
-    
-};   
+        drawCounter(basket);
+    });
+}
 
 
 // footer copyrigth
