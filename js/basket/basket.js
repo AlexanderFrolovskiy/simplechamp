@@ -12,16 +12,21 @@ const basketNull = document.querySelector('.basket__null'),
 let basketSum = document.querySelector('.basket__tfoot-sum');
 basketSum.innerHTML = 0;
 
-if (basket.length == 0) {
-    basketTable.style.display = 'none';
-    basketForm.style.display = 'none';
-    basketNull.innerHTML = 'ваша корзина пуста, перейдите в <a href="market.html">каталог</a> для выбора товаров';
-} else if (basket.length > 0) {
-    for (let i = 0; i < basket.length; i++) {
-        let n = i + 1;
-        tableRow(basket[i], products, n);
-    };
-};
+function renderPage() {
+    if (basket.length == 0) {
+        basketTable.style.display = 'none';
+        basketForm.style.display = 'none';
+        basketNull.innerHTML = 'ваша корзина пуста, перейдите в <a href="market.html">каталог</a> для выбора товаров';
+    } else if (basket.length > 0) {
+        for (let i = 0; i < basket.length; i++) {
+            let n = i + 1;
+            tableRow(basket[i], products, n);
+        }
+    }
+}
+
+renderPage();
+
 
 function tableRow(basket, products, n) {
     const tr = document.createElement('tr'),
@@ -41,6 +46,7 @@ function tableRow(basket, products, n) {
 
     let product = products.find(item => item.id == basket.id);
     
+    tr.classList.add('basket__tbody-tr');
     tdNumber.innerHTML = n;
     tdNumber.setAttribute('data-label', '№');
     tdName.classList.add('basket__tbody-name');
@@ -53,13 +59,21 @@ function tableRow(basket, products, n) {
     tdCountWrap.classList.add('basket__tbody-count');
     tdCountContent.classList.add('basket__tbody-count__wrap');
     tdCountMinus.classList.add('basket__tbody-count__minus');
+    tdCountMinus.addEventListener('click', countMinus);
     tdCountValue.classList.add('basket__tbody-count__value');
     tdCountValue.setAttribute('type', 'number');
     tdCountValue.setAttribute('autocomplete', 'off');
     tdCountValue.value = basket.count;
+
+    if (basket.count == 1) {
+        tdCountMinus.disabled = true;
+    }
+
     tdCountPlus.classList.add('basket__tbody-count__plus');
+    tdCountPlus.addEventListener('click', countPlus);
     tdRemove.classList.add('basket__tbody-btn--remove');
     tdRemove.textContent = 'Удалить';
+    tdRemove.addEventListener('click', productRemove);
     tdPrice.classList.add('basket__tbody-price');
     tdPrice.innerHTML = product.price;
     tdPrice.setAttribute('data-label', 'Цена за единицу');
@@ -82,68 +96,106 @@ function tableRow(basket, products, n) {
     tr.append(tdPrice);
     tr.append(tdTotal);
 
-    basketSum.innerHTML = Number(basketSum.innerHTML) + Number(tdTotal.innerHTML);
+    basketChangeSum();
 }
 
-/* change count product in table row */
-const countProduct = document.querySelectorAll('.basket__tbody-count__value');
-const countPlus = document.querySelectorAll('.basket__tbody-count__plus');
-const countMinus = document.querySelectorAll('.basket__tbody-count__minus');
+function tableRowRemove() {
+    const tableRow = document.querySelectorAll('.basket__tbody-tr');
 
-const basketTotal = document.querySelectorAll('.basket__tbody-total');
-const productPrice = document.querySelectorAll('.basket__tbody-price');
-
-// for (let i = 0; i < countProduct.length; i++) {
-//     if (countProduct[i].value <= 1) {
-//         countMinus[i].disabled = 'disabled';
-//     }
-// }
-
-function basketChangeSum() {
-    basketSum.innerHTML = 0;
-    for (let i = 0; i < basketTotal.length; i++) {
-        basketSum.innerHTML = Number(basketSum.innerHTML) + Number(basketTotal[i].innerHTML);
+    for (let i = 0; i < tableRow.length; i++) {
+        tableRow[i].remove();
     }
 }
 
-for (let i = 0; i < countPlus.length; i++) {
-    countPlus[i].addEventListener('click', function(e) {
-        e.preventDefault();
-        const product = e.currentTarget.closest('[data-product]');
-        const productId = product.attributes['data-product'].value;
 
-        const idx = basket.findIndex(item => item.id === Number(productId));
-
-        basket[idx].count++;
-
-        countProduct[i].value = basket[idx].count;
-
-        basketTotal[idx].innerHTML = basket[idx].count * Number(productPrice[i].innerHTML);
-
-        basketChangeSum();
-
-        saveBasket(basket);
-    })
+/* change count product in table row */
+function basketChangeSum() {
+    basketSum.innerHTML = 0;
+    for (let i = 0; i < basket.length; i++) {
+        let product = products.find(item => item.id == basket[i].id);
+        basketSum.innerHTML = Number(basketSum.innerHTML) + basket[i].count * product.price;
+    }
 }
 
-for (let i = 0; i < countMinus.length; i++) {
-    countMinus[i].addEventListener('click', function(e) {
-        e.preventDefault();
-        const product = e.currentTarget.closest('[data-product]');
-        const productId = product.attributes['data-product'].value;
+function countPlus(e) {
+    e.preventDefault();
+    const parent = e.currentTarget.closest('[data-product]');
+    const productId = parent.attributes['data-product'].value;
+    let countProduct = document.querySelectorAll('.basket__tbody-count__value');
+    let basketTotal = document.querySelectorAll('.basket__tbody-total');
 
-        const idx = basket.findIndex(item => item.id === Number(productId));
+    const idx = basket.findIndex(item => item.id === Number(productId));
+    let product = products.find(item => item.id == basket[idx].id);
 
-        basket[idx].count--
+    basket[idx].count++;
 
-        countProduct[i].value = basket[idx].count;
+    countProduct[idx].value = basket[idx].count;
 
-        basketTotal[idx].innerHTML = basket[idx].count * Number(productPrice[i].innerHTML);
+    basketTotal[idx].innerHTML = basket[idx].count * product.price;
 
-        basketChangeSum();
-        
+    basketChangeSum();
+
+    saveBasket(basket);
+
+    if (basket[idx].count > 1) {
+        const minus = document.querySelectorAll('.basket__tbody-count__minus');
+        minus[idx].disabled = false;
+    }
+}
+
+function countMinus(e) {
+    e.preventDefault();
+    const parent = e.currentTarget.closest('[data-product]');
+    const productId = parent.attributes['data-product'].value;
+    let countProduct = document.querySelectorAll('.basket__tbody-count__value');
+    let basketTotal = document.querySelectorAll('.basket__tbody-total');
+
+    const idx = basket.findIndex(item => item.id === Number(productId));
+    let product = products.find(item => item.id == basket[idx].id);
+
+    if (basket[idx].count > 2) {
+        basket[idx].count--;
+
         saveBasket(basket);
-    })
+
+        countProduct[idx].value = basket[idx].count;
+    
+        basketTotal[idx].innerHTML = basket[idx].count * product.price;
+    
+        basketChangeSum();
+    } else if (basket[idx].count == 2) {
+        basket[idx].count--;
+
+        saveBasket(basket);
+
+        countProduct[idx].value = basket[idx].count;
+    
+        basketTotal[idx].innerHTML = basket[idx].count * product.price;
+    
+        basketChangeSum();
+
+        this.disabled = true;
+    }
+    
+    
+}
+
+function productRemove(e) {
+    e.preventDefault();
+    const parent = e.currentTarget.closest('[data-product]');
+    const productId = parent.attributes['data-product'].value;
+
+    const idx = basket.findIndex(item => item.id === Number(productId));
+
+    if (idx >= 0) {
+        basket.splice(idx, 1);
+    }
+
+    saveBasket(basket);
+
+    tableRowRemove();
+
+    renderPage();
 }
 
 
