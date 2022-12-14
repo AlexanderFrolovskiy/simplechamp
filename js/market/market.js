@@ -3,7 +3,8 @@ import { loadBasket, saveBasket } from './market-api.js';
 
 const knifeWrapper = document.querySelector('.products__knife'),
 bagsWrapper = document.querySelector('.products__bags'),
-accessoryWrapper = document.querySelector('.products__accessory');
+accessoryWrapper = document.querySelector('.products__accessory'),
+equipmentWrapper = document.querySelector('.products__equipment');
 
 function loadProduct(product, basket) {
     const cardWrapper = document.createElement('article'),
@@ -61,6 +62,8 @@ function loadProduct(product, basket) {
         bagsWrapper.append(cardWrapper);
     } else if (categorySymbol == '3') {
         accessoryWrapper.append(cardWrapper);
+    } else if (categorySymbol == '4') {
+        equipmentWrapper.append(cardWrapper);
     };
     
     cardWrapper.append(card);

@@ -80,5 +80,45 @@ export const products = [
         '/img/products/accessory/medallion_002.png',
         '/img/products/accessory/medallion_003.png'
     ]},
+    {id: 3002,
+    name:'Рамки для номеров',
+    descr: 'Материал - пластик, рамки для государственных номеров, LED подсветка, в комлекте 2 шт',
+    price: 3000,
+    img: [
+        '/img/products/accessory/frame_001.png',
+        '/img/products/accessory/frame_002.png'
+    ]},
+    {id: 4001,
+    name:'Стенд для метания',
+    descr: 'Материал - дерево (елка), размер 70х70х15 см, рабочая поверхность 60х60 см',
+    price: 7500,
+    img: [
+        '/img/products/equipment/stand.png',
+        '/img/products/equipment/stand_02.png',
+        '/img/products/equipment/stand_03.png'        
+    ]},
+    {id: 4002,
+    name:'Малый стенд для метания',
+    descr: 'Материал - дерево (елка), размер 55х55х15 см, рабочая поверхность 45х45 см',
+    price: 5000,
+    img: [
+        '/img/products/equipment/stand_small_001.png'
+    ]},
+    {id: 4003,
+    name:'Мишень А3 для метания',
+    descr: 'Количество - 300 шт, Материал - бумага, размер А3, плотность 200 гр/м2, цветность 4+0', 
+    price: 4500,
+    img: [
+        '/img/products/equipment/target_a3_001.png',
+        '/img/products/equipment/target_a3_002.png'
+    ]},
+    {id: 4004,
+    name:'Мишень А4 для метания',
+    descr: 'Количество - 300 шт, Материал - бумага, размер А4, плотность 200 гр/м2, цветность 4+0', 
+    price: 3000,
+    img: [
+        '/img/products/equipment/target_a4_001.png',
+        '/img/products/equipment/target_a4_002.png'
+    ]},
 
 ];
