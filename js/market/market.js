@@ -3,7 +3,8 @@ import { loadBasket, saveBasket } from './market-api.js';
 
 const knifeWrapper = document.querySelector('.products__knife'),
 bagsWrapper = document.querySelector('.products__bags'),
-accessoryWrapper = document.querySelector('.products__accessory');
+accessoryWrapper = document.querySelector('.products__accessory'),
+equipmentWrapper = document.querySelector('.products__equipment');
 
 function loadProduct(product, basket) {
     const cardWrapper = document.createElement('article'),
@@ -43,8 +44,8 @@ function loadProduct(product, basket) {
     button.classList.add('products__card-btn');
     button.setAttribute('data-product-btn', product.id);
     button.innerHTML = 'в корзину';
-
-    if (basket.indexOf(product.id) >= 0) {
+   
+    if (basket.find(item => item.id === product.id)) {
         button.classList.add('products__card-btn--active');
         button.innerHTML = 'в корзине';
     }
@@ -61,6 +62,8 @@ function loadProduct(product, basket) {
         bagsWrapper.append(cardWrapper);
     } else if (categorySymbol == '3') {
         accessoryWrapper.append(cardWrapper);
+    } else if (categorySymbol == '4') {
+        equipmentWrapper.append(cardWrapper);
     };
     
     cardWrapper.append(card);
@@ -134,30 +137,30 @@ for (let i=0; i<buttonCard.length; i++) {
             buttonCard[i].classList.remove('products__card-btn--active');
             buttonCard[i].innerHTML = 'в корзину';                
 
-            const idx = basket.indexOf(Number(productId));
+            const idx = basket.findIndex(item => item.id === Number(productId));
+
             if (idx >= 0) {
                 basket.splice(idx, 1);
-            };
+            }
             
-            saveBasket(basket);
-
-            drawCounter(basket);
         } else {
             buttonCard[i].classList.add('products__card-btn--active');
             buttonCard[i].innerHTML = 'в корзине';
+        
+            if (basket.findIndex(item => item.id === Number(productId)) < 0) {
+                const item = {
+                    id: Number(productId),
+                    count: 1
+                };
+                basket.push(item);      
+            }
+        }
+        
+        saveBasket(basket);
 
-            const idx = basket.indexOf(Number(productId));
-            if (idx < 0) {
-                basket.push(Number(productId));
-            }                
-
-            saveBasket(basket);                      
-                
-            drawCounter(basket);
-        };            
-    });   
-    
-};   
+        drawCounter(basket);
+    });
+}
 
 
 // footer copyrigth
