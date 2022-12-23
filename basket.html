@@ -48,7 +48,7 @@
 				<nav class="header__nav basket__header-nav">
 					<ul class="header__list">
 							<li class="header__item">
-									<a class="header__link" href="market.html">каталог</a>
+									<a class="header__link" href="market.html">Каталог</a>
 							</li>
 					</ul>
 				</nav>
@@ -60,36 +60,40 @@
 		<div class="container">
 			<h2 class="title basket__title">Ваши товары:</h2>
 			<div class="basket__null"></div>
-			<table class="basket__table">
-				<thead>
-					<tr>
-						<th>№</th>
-						<th>Товар</th>
-						<th>Кол-во</th>
-						<th>Цена за единицу</th>
-						<th>Общая стоимость</th>
-					</tr>
-				</thead>
-				<tbody class="basket__tbody"></tbody>
-				<tfoot>
-					<tr>
-						<td class="basket__tfoot-total" colspan="4">итого</td>
-						<td class="basket__tfoot-sum"></td>
-					</tr>
-				</tfoot>
-			</table>
+			<div class="basket__wrapper">
+				<table class="basket__table">
+					<thead>
+						<tr>
+							<th>№</th>
+							<th>Товар</th>
+							<th>Кол-во</th>
+							<th>Цена за единицу</th>
+							<th>Общая стоимость</th>
+						</tr>
+					</thead>
+					<tbody class="basket__tbody"></tbody>
+					<tfoot>
+						<tr>
+							<td class="basket__tfoot-total" colspan="4">итого</td>
+							<td class="basket__tfoot-sum" data-label="итого"></td>
+						</tr>
+					</tfoot>
+				</table>
 
-			<form class="basket__form" id="basket-form" action="">
-				<h2 class="title basket__form-title">Контактные данные</h2>
-				<span class="basket__form-descr">Все поля обязательны для заполнения</span>
-				<input class="form-control mb-3 basket__form-input" name="surname" type="text" placeholder="Фамилия">
-				<input class="form-control mb-3 basket__form-input" name="name" type="text" placeholder="Имя">
-				<input class="form-control mb-3 basket__form-input" name="email" type="email" placeholder="E-mail">
-				<input class="form-control mb-3 basket__form-input basket__form-input__tel" name="tel" type="tel" placeholder="Телефон">
-				<input class="form-control mb-3 basket__form-input" name="address" type="text" placeholder="Адрес (город, улица, дом)">
-				<div class="text-danger mb-2" id="basket__form-error"></div>
-				<button class="basket__form-btn">Оформить заказ</button>
-			</form>
+				<p class="basket__descr"><strong>Внимание!</strong> Стоимость доставки рассчитывается индивидуально после оформления заказа.</p>
+	
+				<form class="basket__form" id="basket-form" action="">
+					<h2 class="title basket__form-title">Контактные данные</h2>
+					<span class="basket__form-descr">Все поля обязательны для заполнения</span>
+					<input class="form-control mb-3 basket__form-input" name="basket-surname" type="text" placeholder="Фамилия">
+					<input class="form-control mb-3 basket__form-input" name="basket-name" type="text" placeholder="Имя">
+					<input class="form-control mb-3 basket__form-input" name="basket-email" type="email" placeholder="E-mail">
+					<input class="form-control mb-3 basket__form-input basket__form-input__tel" name="basket-tel" type="tel" placeholder="Телефон">
+					<input class="form-control mb-3 basket__form-input" name="basket-address" type="text" placeholder="Адрес (город, улица, дом)">
+					<div class="text-danger mb-2" id="basket__form-error"></div>
+					<button class="basket__form-btn">Оформить заказ</button>
+				</form>
+			</div>
 		</div>
 	</section>	
 
@@ -118,6 +122,8 @@
 				<p class="footer__copyright"></p>
 			</div>
 	</footer>
+
+	<div class="btn-up btn-up_hide"></div>
     
 	<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
 	<script src="/js/maska-nomera.js" type="text/javascript"></script>
@@ -136,7 +142,6 @@
 				range.select();
 			}
 		};
-
 
 		$('input[type="tel"]').click(function(){
 			$(this).setCursorPosition(4);
