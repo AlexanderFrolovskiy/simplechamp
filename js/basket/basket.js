@@ -50,6 +50,7 @@ function tableRow(basket, products, n) {
     tdName.setAttribute('data-label', 'Товар');
     tdNameImg.classList.add('basket__tbody-name__img')
     tdNameImg.setAttribute('src', product.img[0]);
+    tdNameText.classList.add('basket__tbody-name__product');
     tdNameText.innerHTML = product.name;
     tdCount.setAttribute('data-label', 'Кол-во');
     tdCount.setAttribute('data-product', basket.id);
@@ -201,7 +202,7 @@ function productRemove(e) {
 }
 
 
-// valid basket form 
+// valid and send basket form 
 const form = document.getElementById('basket-form');
 const formError = document.getElementById('basket__form-error');
 
@@ -220,7 +221,7 @@ form.addEventListener('submit', e => {
     }
 
     try {
-        createOrder(data);
+        createOrder(data);      
     } catch (err) {
         if (err.name !== 'TypeError') throw err;
         if (err.errorMessages) {
@@ -233,27 +234,6 @@ form.addEventListener('submit', e => {
         }
     }
     
-});
-
-// script send form
-$('#basket-form').on('submit', function(event) {
-    event.preventDefault();
-
-    let productArr = [];
-    $('basket__tbody-name').each(function () {
-        productArr.push(this.value);
-    })
-    
-    $.post( '/send-order.php', {
-        basket_products: productArr.join('<br>'),
-        basket_surname: $("input[name='basket-surname']").val(),
-        basket_name: $("input[name='basket-name']").val(),
-        basket_email: $("input[name='basket-email']").val(),
-        basket_tel: $("input[name='basket-tel']").val(),
-        basket_address: $("input[name='basket-address']").val()
-    }).done(function() {
-        window.location.replace("http://simplechamp.ru/accepted.html");
-    });
 });
 
 
