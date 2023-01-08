@@ -52,7 +52,7 @@ function loadProduct(product, basket) {
 
     title.innerHTML = product.name;
     descr.innerHTML = product.descr;
-    priceCount.innerHTML = product.price + ' руб';
+    priceCount.innerHTML = product.price.toLocaleString() + ' руб';
 
     let categorySymbol = String(product.id)[0];
 
@@ -222,6 +222,6 @@ const btnUp = {
         });
         }
     }
-    }
-    
-    btnUp.addEventListener();
+}
+
+btnUp.addEventListener();

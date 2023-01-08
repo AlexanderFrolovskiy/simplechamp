@@ -14,5 +14,11 @@ $name = trim($name);
 $email = trim($email);
 $comment = trim($comment);
 
-mail("info@simplechamp.ru", "Заявка с сайта SimpleChamp.ru", "Имя: ".$name."\n\nТелефон: ".$tel."\n\nПочта: ".$email."\n\nКомментарий: ".$comment, "From: info@simplechamp.ru \r\n");
+mail("a.v.frolovskii@gmail.ru", 
+    "Заявка с сайта SimpleChamp.ru", 
+    "Имя: ".$name.
+    "\n\nТелефон: ".$tel.
+    "\n\nПочта: ".$email.
+    "\n\nКомментарий: ".$comment, 
+    "From: info@simplechamp.ru \r\n");
 ?>

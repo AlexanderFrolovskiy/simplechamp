@@ -160,6 +160,22 @@
     display: block;
     font-size: var(--font-descr);
     color: var(--color-secondary);
+    transition-property: color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.footer__documents-item:focus-visible {
+    outline: none;
+    color: var(--color-detailed);
+}
+
+.footer__documents-item:hover:not(:focus-visible) {
+    color: var(--color-detailed);
+}
+
+.footer__documents-item:active:not(:focus-visible) {
+    color: var(--color-active);
 }
 
 .footer__contacts {
@@ -171,6 +187,22 @@
     display: block;
     font-size: var(--font-descr);
     color: var(--color-secondary);
+    transition-property: color;
+    transition-duration: .3s;
+    transition-timing-function: ease;
+}
+
+.footer__contacts-item:focus-visible {
+    outline: none;
+    color: var(--color-detailed);
+}
+
+.footer__contacts-item:hover:not(:focus-visible) {
+    color: var(--color-detailed);
+}
+
+.footer__contacts-item:active:not(:focus-visible) {
+    color: var(--color-active);
 }
     
 .footer__copyright {    

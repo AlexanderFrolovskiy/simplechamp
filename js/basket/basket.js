@@ -5,8 +5,7 @@ import { createOrder } from './basket-api.js';
 const basket = loadBasket();
 
 const basketNull = document.querySelector('.basket__null'),
-    basketTable = document.querySelector('.basket__table'),
-    basketForm = document.querySelector('.basket__form'),
+    basketWrapper = document.querySelector('.basket__wrapper'),
     basketTableRow = document.querySelector('.basket__tbody');
 
 let basketSum = document.querySelector('.basket__tfoot-sum');
@@ -14,8 +13,7 @@ basketSum.innerHTML = 0;
 
 function renderPage() {
     if (basket.length == 0) {
-        basketTable.style.display = 'none';
-        basketForm.style.display = 'none';
+        basketWrapper.style.display = 'none';
         basketNull.innerHTML = 'ваша корзина пуста, перейдите в <a href="market.html">каталог</a> для выбора товаров';
     } else if (basket.length > 0) {
         for (let i = 0; i < basket.length; i++) {
@@ -26,7 +24,6 @@ function renderPage() {
 }
 
 renderPage();
-
 
 function tableRow(basket, products, n) {
     const tr = document.createElement('tr'),
@@ -53,6 +50,7 @@ function tableRow(basket, products, n) {
     tdName.setAttribute('data-label', 'Товар');
     tdNameImg.classList.add('basket__tbody-name__img')
     tdNameImg.setAttribute('src', product.img[0]);
+    tdNameText.classList.add('basket__tbody-name__product');
     tdNameText.innerHTML = product.name;
     tdCount.setAttribute('data-label', 'Кол-во');
     tdCount.setAttribute('data-product', basket.id);
@@ -75,11 +73,11 @@ function tableRow(basket, products, n) {
     tdRemove.textContent = 'Удалить';
     tdRemove.addEventListener('click', productRemove);
     tdPrice.classList.add('basket__tbody-price');
-    tdPrice.innerHTML = product.price;
+    tdPrice.innerHTML = product.price.toLocaleString();
     tdPrice.setAttribute('data-label', 'Цена за единицу');
     tdTotal.setAttribute('data-label', 'Общая стоимость');
     tdTotal.classList.add('basket__tbody-total');
-    tdTotal.innerHTML = basket.count * product.price;
+    tdTotal.innerHTML = (basket.count * product.price).toLocaleString();
 
     basketTableRow.append(tr);
     tr.append(tdNumber);
@@ -110,10 +108,11 @@ function tableRowRemove() {
 
 /* change count product in table row */
 function basketChangeSum() {
-    basketSum.innerHTML = 0;
+    let total = 0;
     for (let i = 0; i < basket.length; i++) {
         let product = products.find(item => item.id == basket[i].id);
-        basketSum.innerHTML = Number(basketSum.innerHTML) + basket[i].count * product.price;
+        total = total + basket[i].count * product.price;
+        basketSum.innerHTML = total.toLocaleString();
     }
 }
 
@@ -131,7 +130,9 @@ function countPlus(e) {
 
     countProduct[idx].value = basket[idx].count;
 
-    basketTotal[idx].innerHTML = basket[idx].count * product.price;
+    const total = basket[idx].count * product.price;
+
+    basketTotal[idx].innerHTML = total.toLocaleString();
 
     basketChangeSum();
 
@@ -160,7 +161,9 @@ function countMinus(e) {
 
         countProduct[idx].value = basket[idx].count;
     
-        basketTotal[idx].innerHTML = basket[idx].count * product.price;
+        const total = basket[idx].count * product.price;
+
+        basketTotal[idx].innerHTML = total.toLocaleString();
     
         basketChangeSum();
     } else if (basket[idx].count == 2) {
@@ -170,14 +173,14 @@ function countMinus(e) {
 
         countProduct[idx].value = basket[idx].count;
     
-        basketTotal[idx].innerHTML = basket[idx].count * product.price;
+        const total = basket[idx].count * product.price;
+
+        basketTotal[idx].innerHTML = total.toLocaleString();
     
         basketChangeSum();
 
         this.disabled = true;
-    }
-    
-    
+    }    
 }
 
 function productRemove(e) {
@@ -199,7 +202,7 @@ function productRemove(e) {
 }
 
 
-// send new order 
+// valid and send basket form 
 const form = document.getElementById('basket-form');
 const formError = document.getElementById('basket__form-error');
 
@@ -218,7 +221,7 @@ form.addEventListener('submit', e => {
     }
 
     try {
-        createOrder(data);
+        createOrder(data);      
     } catch (err) {
         if (err.name !== 'TypeError') throw err;
         if (err.errorMessages) {
@@ -233,6 +236,39 @@ form.addEventListener('submit', e => {
     
 });
 
+
+/* up button */
+const btnUp = {
+    el: document.querySelector('.btn-up'),
+    show() {
+        // удалим у кнопки класс btn-up_hide
+        this.el.classList.remove('btn-up_hide');
+    },
+    hide() {
+        // добавим к кнопке класс btn-up_hide
+        this.el.classList.add('btn-up_hide');
+    },
+    addEventListener() {
+        // при прокрутке содержимого страницы
+        window.addEventListener('scroll', () => {
+        // определяем величину прокрутки
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+        // если страница прокручена больше чем на 400px, то делаем кнопку видимой, иначе скрываем
+        scrollY > 400 ? this.show() : this.hide();
+        });
+        // при нажатии на кнопку .btn-up
+        document.querySelector('.btn-up').onclick = () => {
+        // переместим в начало страницы
+        window.scrollTo({
+            top: 0,
+            left: 0,
+            behavior: 'smooth'
+        });
+        }
+    }
+}
+
+btnUp.addEventListener();
 
 // footer copyrigth
 const copyright = document.querySelector('.footer__copyright');
