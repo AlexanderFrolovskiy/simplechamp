@@ -71,6 +71,15 @@ export const products = [
         '/img/products/bags/case_ataks_green_001.png',
         '/img/products/bags/case_ataks_green_002.png'
     ]},
+    {id: 2008,
+    name:'Кожаный чехол на 3 ножа',
+    descr: 'Материал - кожа, толщина кожи 3 мм, усиленные швы, застежка - кнопка, максимальная вместимость 3 ножа',
+    price: 650,
+    img: [
+        '/img/products/bags/leather_case_001.png',
+        '/img/products/bags/leather_case_002.png',
+        '/img/products/bags/leather_case_003.png'
+    ]},
     {id: 3001,
     name:'Медальница &laquo;Движемся вперед&raquo;',
     descr: 'Материал - дерево, высота: 28 см, ширина: 43.5 см, крепежный набор в комплекте',
