@@ -15,6 +15,20 @@ export const products = [
         '/img/products/knifes/knife_smn_001.png',
         '/img/products/knifes/knife_smn_002.png'
     ]},
+    // {id: 1003,
+    // name:'Гравировка на ножах',
+    // descr: 'Индивидуальная гравировка на ножах, стоимость гравировки зависит от сложности нанесения, размеров нанесения и необходимости разработки макета',
+    // price: 1500,
+    // img: [
+    //     '/img/products/knifes/etching_001.png'
+    // ]},
+    // {id: 1004,
+    // name:'Трейд-ин ножей',
+    // descr: 'К обмену принимаются только ножи СМН и СМН+, приобретенные в нашем магазине. Старый комплект из 3 ножей обменивается на новый комплект из 3 ножей',
+    // price: 3600,
+    // img: [
+    //     '/img/products/knifes/trade_in_001.png'
+    // ]},
     {id: 2001,
     name:'Чехол &laquo;ЦИФРА РФ&raquo; на 3 ножа',
     descr: 'Усиленные швы, с петлей для ремня, материал - ткань Оксфорд 600 D, максимальная вместимость до 4 ножей',
@@ -95,7 +109,8 @@ export const products = [
     price: 3000,
     img: [
         '/img/products/accessory/frame_001.png',
-        '/img/products/accessory/frame_002.png'
+        '/img/products/accessory/frame_002.png',
+        '/img/products/accessory/frame_003.png'
     ]},
     {id: 4001,
     name:'Стенд для метания',
@@ -114,8 +129,8 @@ export const products = [
         '/img/products/equipment/stand_small_001.png'
     ]},
     {id: 4003,
-    name:'Мишень А3 для метания',
-    descr: 'Количество - 300 шт, материал - бумага, размер А3, плотность 200 г/м2, цветность 4+0', 
+    name:'Мишень большая для метания',
+    descr: 'Количество - 300 шт, материал - бумага, размер мишени 360х320 мм, плотность 200 г/м2, цветность 4+0', 
     price: 6000,
     img: [
         '/img/products/equipment/target_a3_001.png',
@@ -123,7 +138,7 @@ export const products = [
     ]},
     {id: 4004,
     name:'Мишень А4 для метания',
-    descr: 'Количество - 300 шт, материал - бумага, размер А4, плотность 200 г/м2, цветность 4+0', 
+    descr: 'Количество - 300 шт, материал - бумага, размер мишени 220х180 мм, плотность 200 г/м2, цветность 4+0', 
     price: 4500,
     img: [
         '/img/products/equipment/target_a4_001.png',

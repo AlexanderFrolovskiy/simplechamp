@@ -10,6 +10,8 @@ function loadProduct(product, basket) {
     const cardWrapper = document.createElement('article'),
     card = document.createElement('div'),
     content = document.createElement('div'),
+    contentTop = document.createElement('div'),
+    contentBottom = document.createElement('div'),
     title = document.createElement('h3'),
     descr = document.createElement('p'),
     priceWrapper = document.createElement('div'),
@@ -86,18 +88,20 @@ function loadProduct(product, basket) {
     swiper.append(swiperButtonPrev);
     swiper.append(swiperButtonNext);
     card.append(content);
-    content.append(title);
-    content.append(descr);
-    content.append(priceWrapper);
+    content.append(contentTop);
+    contentTop.append(title);
+    contentTop.append(descr);
+    content.append(contentBottom);
+    contentBottom.append(priceWrapper);
     priceWrapper.append(priceText);
     priceWrapper.append(priceCount);
-    content.append(button);
+    contentBottom.append(button);
 
 
     new Swiper('#swiper-' + product.id, {
         speed: 400,
         spaceBetween: 20,
-        loop: true,
+        // loop: true,
         navigation: {
             nextEl: '#swiper-button-next-' + product.id,
             prevEl: '#swiper-button-prev-' + product.id,
