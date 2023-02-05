@@ -119,6 +119,14 @@
     background-color: #88c639;
 }
 
+.product__card-stock {
+    text-align: center;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #adadad;
+}
+
 /* FOOTER */
 .footer {
     color: var(--color-secondary);
@@ -204,6 +212,11 @@
 
 .footer__contacts-item:active:not(:focus-visible) {
     color: var(--color-active);
+}
+
+.footer__text {
+    margin-bottom: 20px;
+    font-size: var(--font-descr);
 }
     
 .footer__copyright {    
@@ -302,6 +315,11 @@
 
 .popup-burger__link:active:not(:focus-visible) {
     color: var(--color-active);
+}
+
+.popup-burger__text {
+    font-size: var(--font-main);
+    color: var(--color-secondary);
 }
 
 .popup-burger__closed {

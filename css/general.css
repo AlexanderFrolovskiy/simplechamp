@@ -202,6 +202,12 @@ img {
     margin-right: 10px;
 }
 
+.header__item-tel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .header__link {    
     font-size: var(--font-main);
     color: var(--color-secondary);
@@ -209,6 +215,11 @@ img {
     transition-property: color;
     transition-duration: .3s;
     transition-timing-function: ease-in-out;
+}
+
+.header__item-tel__text {
+    font-size: var(--font-secondary);
+    color: var(--color-secondary);
 }
 
 .header__link-basket {
