@@ -17,7 +17,8 @@ function loadProduct(product, basket) {
     priceWrapper = document.createElement('div'),
     priceText = document.createElement('p'),
     priceCount = document.createElement('p'),
-    button = document.createElement('button');
+    button = document.createElement('button'),
+    noStock = document.createElement('p');
 
     const swiper = document.createElement('div'),
     swiperWrapper = document.createElement('div'),
@@ -43,14 +44,20 @@ function loadProduct(product, basket) {
     priceText.innerHTML = 'цена:';
     priceCount.classList.add('products__card-price__count');
 
-    button.classList.add('products__card-btn');
-    button.setAttribute('data-product-btn', product.id);
-    button.innerHTML = 'в корзину';
-   
-    if (basket.find(item => item.id === product.id)) {
-        button.classList.add('products__card-btn--active');
-        button.innerHTML = 'в корзине';
+    if (product.stock) {
+        button.classList.add('products__card-btn');
+        button.setAttribute('data-product-btn', product.id);
+        button.innerHTML = 'в корзину';
+       
+        if (basket.find(item => item.id === product.id)) {
+            button.classList.add('products__card-btn--active');
+            button.innerHTML = 'в корзине';
+        }
+    } else {
+        noStock.classList.add('product__card-stock');
+        noStock.innerHTML = 'нет в наличии';
     }
+
 
     title.innerHTML = product.name;
     descr.innerHTML = product.descr;
@@ -95,13 +102,17 @@ function loadProduct(product, basket) {
     contentBottom.append(priceWrapper);
     priceWrapper.append(priceText);
     priceWrapper.append(priceCount);
-    contentBottom.append(button);
+
+    if (product.stock) {
+        contentBottom.append(button);
+    } else {
+        contentBottom.append(noStock);
+    }
 
 
     new Swiper('#swiper-' + product.id, {
         speed: 400,
         spaceBetween: 20,
-        // loop: true,
         navigation: {
             nextEl: '#swiper-button-next-' + product.id,
             prevEl: '#swiper-button-prev-' + product.id,
