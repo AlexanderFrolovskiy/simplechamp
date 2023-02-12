@@ -109,13 +109,24 @@ export const products = [
     stock: false
     },
     {id: 2008,
-    name:'Кожаный чехол на 3 ножа',
+    name:'Кожаный чехол V1 на 3 ножа',
     descr: 'Материал - кожа, толщина кожи 3 мм, усиленные швы, застежка - кнопка, максимальная вместимость 3 ножа',
     price: 650,
     img: [
         '/img/products/bags/leather_case_001.png',
         '/img/products/bags/leather_case_002.png',
         '/img/products/bags/leather_case_003.png'
+    ],
+    stock: true
+    },
+    {id: 2009,
+    name:'Кожаный чехол V2 на 3 ножа',
+    descr: 'Материал - кожа, толщина кожи 3 мм, усиленные швы, застежка - кнопка, максимальная вместимость 3 ножа',
+    price: 650,
+    img: [
+        '/img/products/bags/leather_case_v2_001.png',
+        '/img/products/bags/leather_case_v2_002.png',
+        '/img/products/bags/leather_case_v2_003.png'
     ],
     stock: true
     },
