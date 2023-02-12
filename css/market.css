@@ -127,6 +127,63 @@
     color: #adadad;
 }
 
+.products__btn {
+    text-align: center;
+}
+
+.products__link { 
+    padding: 17px 40px;
+    display: inline-flex;
+    text-align: center;
+    border: 1px solid #333;
+    font-size: var(--font-descr);
+    line-height: 20px;
+    color: #333;
+    cursor: pointer;
+    transition-property: color, background-color;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.products__link:focus-visible {
+    background-color: var(--color-main-opacity);
+    color: var(--color-secondary);
+}
+
+.products__link:hover:not(:focus-visible) {
+    background-color: var(--color-main-opacity);
+    color: var(--color-secondary);
+}
+
+.products__link:active:not(:focus-visible) {
+    background-color: var(--color-darken);
+    color: var(--color-secondary);
+}
+
+.products__link-arrow {
+    margin-left: 8px;    
+}
+
+.products__link-arrow path {
+    fill: #333;
+    transition-property: fill;
+    transition-duration: .3s;
+    transition-timing-function: ease-in-out;
+}
+
+.products__link:focus-visible .products__link-arrow path {
+    fill: var(--color-secondary);
+}
+
+.products__link:hover:not(:focus-visible) .products__link-arrow path {
+    fill: var(--color-secondary);
+}
+
+.products__link:active:not(:focus-visible) .products__link-arrow path {
+    fill: var(--color-secondary);
+}
+
+
 /* FOOTER */
 .footer {
     color: var(--color-secondary);
