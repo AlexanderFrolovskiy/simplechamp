@@ -281,17 +281,6 @@
 }
 
 /* UP */
-.up {
-    position: fixed;
-    right: 40px;
-    bottom: 40px;
-    z-index: 50;
-    display: none;
-    height: 60px;
-    border-radius: 100px;
-    background-color: #fff;
-}
-
 .btn-up {
     position: fixed;
     background-color: #88c639;
@@ -323,7 +312,54 @@
   }
 
   .btn-up:hover {
-    background-color: #557926;
+    opacity: 1;
+  }
+
+
+/* order */
+.order {
+    position: fixed;
+    right: 40px;
+    bottom: 40px;
+    z-index: 50;
+    display: none;
+    height: 60px;
+    border-radius: 100px;
+    background-color: #fff;
+}
+
+.btn-order {
+    position: fixed;
+    background-color: #88c639;
+    opacity: .7;
+    right: 100px;
+    bottom: 0;
+    z-index: 50;
+    border-top-left-radius: 8px;
+    border-top-right-radius: 8px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 60px;
+    height: 50px;
+  }
+  
+  .btn-order::before {
+    content: "";
+    width: 40px;
+    height: 40px;
+    background: transparent no-repeat center center;
+    background-size: 100%;
+    background-image: url("../img/basket.svg");
+  }
+  
+  .btn-order_hide {
+    display: none;
+  }
+
+  .btn-order:hover {
+    opacity: 1;
   }
 
 /* POPUP BURGER */
