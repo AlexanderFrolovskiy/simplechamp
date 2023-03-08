@@ -11,7 +11,7 @@ export const products = [
     },
     {id: 1002,
     name:'Ножи для метания СМН',
-    descr: 'Сертифицированные ножи для спортсменов до 18 лет, в комплекте 3 ножа, изготовлены из высоколегированного коррозионностойкого сплава, относящегося к мартенситному классу',
+    descr: 'Сертифицированные ножи для спортсменов младше 18 лет, в комплекте 3 ножа, изготовлены из высоколегированного коррозионностойкого сплава, относящегося к мартенситному классу',
     price: 5600,
     img: [
         '/img/products/knifes/knife_smn_001.png',
@@ -41,7 +41,7 @@ export const products = [
     {id: 2001,
     name:'Чехол &laquo;ЦИФРА РФ&raquo; на 3 ножа',
     descr: 'Усиленные швы, с петлей для ремня, материал - ткань Оксфорд 600 D, максимальная вместимость до 4 ножей',
-    price: 400,
+    price: 600,
     img: [
         '/img/products/bags/case_cifra_001.png',
         '/img/products/bags/case_cifra_002.png'
@@ -51,7 +51,7 @@ export const products = [
     {id: 2002,
     name:'Чехол &laquo;МУЛЬТИКАМ&raquo; на 3 ножа',
     descr: 'Усиленные швы, с петлей для ремня, материал - ткань Оксфорд 600 D, максимальная вместимость до 4 ножей',
-    price: 400,
+    price: 600,
     img: [
         '/img/products/bags/case_multicam_001.png',
         '/img/products/bags/case_multicam_002.png'
@@ -128,7 +128,7 @@ export const products = [
         '/img/products/bags/leather_case_v2_002.png',
         '/img/products/bags/leather_case_v2_003.png'
     ],
-    stock: true
+    stock: false
     },
     {id: 3001,
     name:'Медальница &laquo;Движемся вперед&raquo;',
@@ -152,9 +152,21 @@ export const products = [
     ],
     stock: true
     },
+    {id: 3003,
+    name:'Напильник с алмазной крошкой',
+    descr: 'Миниатюрный напильник с алмазной крошкой (100/80 микрон), длина: 14 см, ширина: 2 см, толщина: 3 мм',
+    price: 750,
+    img: [
+        '/img/products/accessory/file_001.jpg',
+        '/img/products/accessory/file_002.jpg',
+        '/img/products/accessory/file_003.jpg',
+        '/img/products/accessory/file_004.jpg'
+    ],
+    stock: true
+    },
     {id: 4001,
-    name:'Стенд для метания',
-    descr: 'Материал - дерево, размер 70х70х15 см, рабочая поверхность 60х60 см',
+    name:'Стенд для метания 75',
+    descr: 'Материал - дерево, размер 75х75х15 см, рабочая поверхность 60х60 см, наличие Сертификата Соответсвия',
     price: 7500,
     img: [
         '/img/products/equipment/stand.png',
@@ -164,8 +176,8 @@ export const products = [
     stock: true
     },
     {id: 4002,
-    name:'Малый стенд для метания',
-    descr: 'Материал - дерево, размер 55х55х15 см, рабочая поверхность 45х45 см',
+    name:'Стенд для метания 60',
+    descr: 'Материал - дерево, размер 60х60х15 см, рабочая поверхность 45х45 см, наличие Сертификата Соответсвия',
     price: 5000,
     img: [
         '/img/products/equipment/stand_small_001.png'

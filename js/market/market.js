@@ -240,3 +240,32 @@ const btnUp = {
 }
 
 btnUp.addEventListener();
+
+/* order button */
+const btnOrder = {
+    el: document.querySelector('.btn-order'),
+    show() {
+        // удалим у кнопки класс btn-order_hide
+        this.el.classList.remove('btn-order_hide');
+    },
+    hide() {
+        // добавим к кнопке класс btn-order_hide
+        this.el.classList.add('btn-order_hide');
+    },
+    addEventListener() {
+        // при прокрутке содержимого страницы
+        window.addEventListener('scroll', () => {
+        // определяем величину прокрутки
+        const scrollY = window.scrollY || document.documentElement.scrollTop;
+        // если страница прокручена больше чем на 400px, то делаем кнопку видимой, иначе скрываем
+        scrollY > 400 ? this.show() : this.hide();
+        });
+        // при нажатии на кнопку .btn-order
+        document.querySelector('.btn-order').onclick = () => {
+        // переместим в начало страницы
+        window.location.href = "https://www.simplechamp.ru/basket.html";
+        }
+    }
+}
+
+btnOrder.addEventListener();
