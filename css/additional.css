@@ -44,7 +44,7 @@
 }
 
 .accepted__descr {
-    margin: 0 auto 80px;
+    margin: 0 auto 40px;
     max-width: 600px;
     font-size: 25px;
     font-weight: 400;
@@ -54,7 +54,7 @@
     padding: 20px 35px;
     display: inline-block;
     border: none;
-    border-radius: 20px;
+    /* border-radius: 20px; */
     font-size: var(--font-main);
     color: var(--color-secondary);
     background-color: var(--color-btn);

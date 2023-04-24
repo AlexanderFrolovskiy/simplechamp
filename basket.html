@@ -88,7 +88,16 @@
 					<input class="form-control mb-3 basket__form-input" name="surname" type="text" placeholder="Фамилия">
 					<input class="form-control mb-3 basket__form-input" name="name" type="text" placeholder="Имя">
 					<input class="form-control mb-3 basket__form-input" name="address" type="text" placeholder="Адрес для доставки (город, улица, дом)">
-					<input class="form-control mb-3 basket__form-input basket__form-input__tel" name="tel" type="tel" placeholder="Телефон">
+					<div class="basket__form-wrapper">
+						<div class="basket__form-select">
+							<button class="select select__russia" data-tel="russia"></button>
+							<ul class="select__list">
+								<li class="select__list-item select__russia" data-value="russia"></li>
+								<li class="select__list-item select__belarus" data-value="belarus"></li>
+							</ul>
+						</div>
+						<input class="form-control mb-3 basket__form-input basket__form-input__tel" name="tel" type="tel" placeholder="Телефон">
+					</div>
 					<input class="form-control mb-3 basket__form-input" name="email" type="email" placeholder="E-mail">
 					<div class="text-danger mb-2" id="basket__form-error"></div>
 					<button class="basket__form-btn" type="submit">Оформить заказ</button>
@@ -129,23 +138,12 @@
 	<script src="/js/maska-nomera.js" type="text/javascript"></script>
 
 	<script>
-		$('.basket__form-input__tel').mask('+7 (999) 999-99-99');
-
-		$.fn.setCursorPosition = function(pos) {
-			if ($(this).get(0).setSelectionRange) {
-				$(this).get(0).setSelectionRange(pos, pos);
-			} else if ($(this).get(0).createTextRange) {
-				var range = $(this).get(0).createTextRange();
-				range.collapse(true);
-				range.moveEnd('character', pos);
-				range.moveStart('character', pos);
-				range.select();
-			}
-		};
-
-		$('input[type="tel"]').click(function(){
-			$(this).setCursorPosition(4);
-		});
+		const country = document.querySelector('.select');
+		if (country.attributes['data-tel'].value == 'russia') {
+			$('.basket__form-input__tel').mask('+7 (999) 999-99-99');			
+		} else if (country.attributes['data-tel'].value == 'belarus') {
+			$('.basket__form-input__tel').mask('+375 (99) 999-99-99');			
+		};		
 	</script>
 </body>
 </html>

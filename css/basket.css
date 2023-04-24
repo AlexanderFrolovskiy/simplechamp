@@ -284,6 +284,78 @@
     box-shadow: 0 0 0 0.25rem rgb(63 173 17 / 25%);
 }
 
+.basket__form-wrapper {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+}
+
+/* SELECT */
+.basket__form-select {
+    position: relative;
+    margin-right: 10px;
+}
+
+.select {
+    position: relative;
+    width: 60px;
+    padding: 0;
+    border: 1px solid #ced4da; 
+    background-color: transparent;
+}
+
+.select::after {
+    content: '';
+    position: absolute;
+    top: 50%;
+    right: 6px;
+    transform: translateY(-50%);
+    width: 0;
+    height: 0;
+    border-width: 8.4px 6px 0 6px;
+    border-color: #ced4da transparent transparent transparent;
+    border-style: solid;
+    pointer-events: none;
+}
+
+.select__list {
+    position: absolute;
+    z-index: 10;
+    display: none;
+    width: 60px;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(176, 198, 225, 0.6);
+}
+
+.select-is-active {
+    display: block;
+}
+
+.select__list-item {
+    margin-top: -1px;
+    padding: 2px;
+    border: 1px solid #ced4da;
+    cursor: pointer;
+}
+
+.select__list-item:hover {
+    background-color: #ededed;
+}
+
+.select__russia {
+    height: 38px;
+    background-image: url('../img/flags/russia.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.select__belarus {
+    height: 38px;
+    background-image: url('../img/flags/belarus.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
 /* FOOTER */
 .footer {
     color: var(--color-secondary);

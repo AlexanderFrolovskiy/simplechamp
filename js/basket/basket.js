@@ -201,6 +201,71 @@ function productRemove(e) {
     renderPage();
 }
 
+// select 
+const flag = document.querySelector('.select');
+const selectList = document.querySelector('.select__list');
+
+flag.addEventListener('click', function(e) {
+    e.preventDefault();
+
+    selectList.classList.add('select-is-active');
+});
+
+window.addEventListener('click', function(e) {
+    const target = e.target;
+
+    if(!target.closest('.basket__form-select') ) {
+        selectList.classList.remove('select-is-active');
+    };
+});
+
+const selectListItem = document.querySelectorAll('.select__list-item');
+
+for (let i = 0; i < selectListItem.length; i++) {
+    selectListItem[i].addEventListener('click', function(e) {
+        e.preventDefault();
+        const country = selectListItem[i].attributes['data-value'].value;
+        if (flag.attributes['data-tel'].value != country) {
+            flag.attributes['data-tel'].value = country;
+
+            flag.classList.remove(flag.classList.item(1));
+            flag.classList.add('select__' + country);
+            selectList.classList.remove('select-is-active');           
+            
+        } else {
+            selectList.classList.remove('select-is-active');
+        };
+
+        if (flag.attributes['data-tel'].value == 'russia') {
+			$('.basket__form-input__tel').mask('+7 (999) 999-99-99');
+
+            $('input[type="tel"]').click(function(){
+				$(this).setCursorPosition(4);
+			});
+
+		} else if (flag.attributes['data-tel'].value == 'belarus') {
+			$('.basket__form-input__tel').mask('+375 (99) 999-99-99');
+
+            $('input[type="tel"]').click(function(){
+				$(this).setCursorPosition(6);
+			});
+		};
+    });
+};
+
+$.fn.setCursorPosition = function(pos) {
+    if ($(this).get(0).setSelectionRange) {
+        $(this).get(0).setSelectionRange(pos, pos);
+    } else if ($(this).get(0).createTextRange) {
+        var range = $(this).get(0).createTextRange();
+        range.collapse(true);
+        range.moveEnd('character', pos);
+        range.moveStart('character', pos);
+        range.select();
+    }
+};
+
+
 
 // valid and send basket form 
 const form = document.getElementById('basket-form');
